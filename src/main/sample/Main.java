@@ -4,22 +4,25 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
-import main.sample.GameTile.Map;
-import main.sample.GameTile.Road;
+
+import main.sample.GameEntity.Enemy.NormalEnemy;
+import main.sample.GameEntity.Map;
+import main.sample.GameEntity.Road;
+import main.sample.GameEntity.Spawner;
+import main.sample.GameEntity.Tower.NormalTower;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 
 public class Main extends Application{
@@ -28,9 +31,9 @@ public class Main extends Application{
 
 
   //  final public Scale srink=new Scale(0.5,0.5);
-    public GraphicsContext gc;
-    public List<GameObject> gameObjects = new ArrayList<>();
-
+    public static GraphicsContext gc;
+    public static List<GameObject> gameObjects = new ArrayList<>();
+    public static Tick tick=new Tick();
     public static void main(String[] args) {
         Application.launch(args);
     }
@@ -49,10 +52,11 @@ public class Main extends Application{
         Scene scene = new Scene(root);
 
         // Them scene vao stage
-        stage.setTitle("Tower Defense");
+        stage.setTitle("main.sample.GameEntity.Tower Defense");
+
         stage.setResizable(false);
 
-        Image image_button = new Image("file:src/main/AssetsKit_2/PlayButton.png");
+     /*   Image image_button = new Image("file:src/main/AssetsKit_2/PlayButton.png");
         ImageView imageView_button=new ImageView(image_button);
 
         Image image_menu = new Image("file:src/main/AssetsKit_2/Menu.png");
@@ -65,15 +69,15 @@ public class Main extends Application{
         Button button=new Button("",imageView_button);
         button.setWrapText(true);
         button.setTranslateX(Config.width*Config.scale/2-192/2);
-        button.setTranslateY(Config.height*Config.scale/2-128/2);
+        button.setTranslateY(Config.height*Config.scale/2-128/2);*/
 
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
+     //   button.setOnAction(new EventHandler<ActionEvent>() {
+      //      @Override
+      //      public void handle(ActionEvent actionEvent) {
 
-                root.getChildren().removeAll(imageView_menu,button);
+       //         root.getChildren().removeAll(imageView_menu,button);
 
-                final int[] time = {0};
+
 
                 AnimationTimer timer = new AnimationTimer() {
                     @Override
@@ -81,34 +85,54 @@ public class Main extends Application{
 
                         render();
                         update();
-                        time[0]++;
-                        System.out.println(time[0]);
+
                     }
                 };
                 timer.start();
+
+                gameObjects.add(tick);
+                gameObjects.add(new NormalTower(4,5));
+
+
+             /*   if(tick.getTime()==0){
+                    for (int x=0;x<10;x++){
+                        if(tick.getTime()==10+x*5) gameObjects.add(new NormalEnemy(2,12));
+                    }
+                }*/
+
+                gameObjects.add(new Spawner(5,10,3));
+
+
+                stage.setScene(scene);
+                stage.show();
             }
-        });
 
-
-        root.getChildren().add(button);
-
-
-
-        stage.setScene(scene);
-        stage.show();
-
-       // gameObjects.add(createTank());
-        //gameObjects.add(createTower());
-    }
     public void update() {
         gameObjects.forEach(GameObject::update);
+
     }
 
     public void render() {
         Map.drawMap(gc);
         Road.drawPoints(gc);
+      //  for(ListIterator<GameObject> listIterator=gameObjects.listIterator();listIterator.hasNext();){
+
+       // }
         gameObjects.forEach(g -> g.render(gc));
     }
 
 
-}
+
+       // root.getChildren().add(button);
+
+
+
+
+
+       // gameObjects.add(createTank());
+        //gameObjects.add(createTower());
+    }
+
+
+
+

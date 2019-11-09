@@ -9,7 +9,7 @@ public enum Direction {
         degree = i;
     }
 
-    int getDegree() {
+    public int getDegree() {
         return degree;
     }
 }

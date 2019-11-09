@@ -2,18 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Mountain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Road.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Spawner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Target.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/License.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/License.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/GameEntity/Bullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/GameEntity/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/GameEntity/GameTile/Mountain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/GameEntity/GameTile/Road.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/GameEntity/GameTile/Spawner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/GameEntity/GameTile/Target.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/GameEntity/GameTile/Tower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Enemy/AbtractEnemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameTile/Map.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameTile/Road.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameTile/Spawner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameTile/Target.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/License.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/License.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameEntity/Bullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameEntity/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameEntity/GameTile/Mountain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameEntity/GameTile/Road.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameEntity/GameTile/Spawner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameEntity/GameTile/Target.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameEntity/GameTile/Tower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Enemy/AbtractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Enemy/AbtractEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Enemy/NormalEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/GameEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameTile/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameTile/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Road.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameTile/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Spawner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameTile/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Target.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Point.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +177,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.sample.Enemy.*" />
+          <option name="PATTERN" value="main.sample.GameEntity.GameTile.Enemy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
