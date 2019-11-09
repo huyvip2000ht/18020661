@@ -8,6 +8,8 @@ public abstract class GameObject {
     public int j;
     public int x;
     public int y;
+    public int centerI;
+    public int centerJ;
 
 
     public abstract void render(GraphicsContext gc);

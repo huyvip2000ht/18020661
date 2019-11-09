@@ -1,5 +1,7 @@
 package main.sample.GameEntity.Tower;
 
+import main.sample.Angle;
+import main.sample.Circle;
 import main.sample.GameObject;
 
 import java.awt.*;
@@ -8,11 +10,14 @@ import java.awt.image.ImageProducer;
 
 public abstract class AbtractTower extends GameObject {
 
-    double damage;
-    double fireRate;
-    double fireRange;
+    public double  damage;
+    public double fireRate;
+    public double fireRange;
+  //  Circle circle;
+    public double angle;
 
-    int rotation;
+
+
 
    /* public AbtractTower(int x,int y,double damage,double fireRate,double fireRange,Image gunImg,Image baseImg){
         this.x=x;

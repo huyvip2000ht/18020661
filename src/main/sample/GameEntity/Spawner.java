@@ -38,17 +38,17 @@ public class Spawner extends GameObject {
     @Override
     public void update() {
         ListIterator<GameObject> listIterator= gameObjects.listIterator();
-        if(tick.getTime()==timeCreated) {
+      /*  if(tick.getTime()==timeCreated) {
             for (int n = 0; n < numberofEnemy;n++) {
                 if(tick.getTime()==timeCreated + delayTime* n ) listIterator.add(new NormalEnemy(2,12));
             }
-        }
+        }*/
 
-      /*  if(tick.getTime()==timeCreated) {
+        if(tick.getTime()==timeCreated) {
             for (int n = 0; n < numberofEnemy; n++) {
                 if(tick.getTime()==timeCreated + delayTime * n) gameObjects.add(new NormalEnemy(2,12));
             }
-        }*/
+        }
     //    for(ListIterator<GameObject> listIterator = gameObjects.listIterator(); listIterator.hasNext();){
 
      //   }

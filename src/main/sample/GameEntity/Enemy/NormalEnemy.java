@@ -8,9 +8,14 @@ import main.sample.Config;
 import javafx.scene.image.Image;
 import main.sample.Direction;
 import main.sample.GameEntity.Road;
+import main.sample.GameEntity.Tower.AbtractTower;
+import main.sample.GameObject;
 import main.sample.Point;
 
 import java.awt.*;
+import java.util.ListIterator;
+
+import static main.sample.Main.gameObjects;
 
 public class NormalEnemy extends AbtractEnemy {
 
@@ -31,9 +36,11 @@ public class NormalEnemy extends AbtractEnemy {
         this.y=y;
         i = x * Config.scale;
         j = y * Config.scale;
+        centerI=x*Config.scale-32;
+        centerJ=y*Config.scale-32;
         health = 1;
         reward = 2;
-        speed = 10;
+        speed = 7;
         direction= Direction.UP;
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile291.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile268.png") ;
@@ -68,6 +75,14 @@ public class NormalEnemy extends AbtractEnemy {
      //   gc.drawImage(gunImg,i,j);
 
     }
+    public boolean isInRange(AbtractTower tower){
+        if (Point.distance(this.centerI,this.centerJ,tower.centerI,tower.centerJ)
+                <=tower.fireRange*Config.scale){
+            return true;
+        }
+        return false;
+    }
+
 
     void calculateDirection(){
         if (wayPointIndex >= Road.wayPoints.length) {
@@ -93,21 +108,51 @@ public class NormalEnemy extends AbtractEnemy {
 
     @Override
     public void update() {
+
+    /*    ListIterator<GameObject> listIterator=gameObjects.listIterator();
+        while (listIterator.hasNext()){
+            if(listIterator.next().getClass().getName()=="main.sample.GameEntity.Tower.NormalTower"){
+                if(this.isInRange(listIterator.next().)) System.out.println();
+            }
+        }*/
+    for(GameObject a:gameObjects){
+
+        if(a.getClass().getName()=="main.sample.GameEntity.Tower.NormalTower"){
+            if(this.isInRange((AbtractTower) a))
+                System.out.println("Trong tầm");
+           // System.out.println(Point.distance(this.centerI,this.centerJ,a.centerI,a.centerJ));
+        /*    System.out.println("i enemy:"+centerI);
+            System.out.println("j enemy:"+centerJ);
+            System.out.println("i tower:"+a.centerI);
+            System.out.println("j tower"+a.centerJ);*/
+        }
+
+
+    }
+
+
         calculateDirection();
 
         switch (direction) {
             case UP:
                 j -= speed;
+                centerJ-=speed;
                 break;
             case DOWN:
                 j += speed;
+                centerJ+=speed;
                 break;
             case LEFT:
                 i -= speed;
+                centerI-=speed;
                 break;
             case RIGHT:
                 i += speed;
+                centerI+=speed;
                 break;
         }
     }
+
+
+
 }

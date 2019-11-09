@@ -33,6 +33,7 @@ public class Main extends Application{
   //  final public Scale srink=new Scale(0.5,0.5);
     public static GraphicsContext gc;
     public static List<GameObject> gameObjects = new ArrayList<>();
+  //  public static List<NormalTower>
     public static Tick tick=new Tick();
     public static void main(String[] args) {
         Application.launch(args);
@@ -91,7 +92,18 @@ public class Main extends Application{
                 timer.start();
 
                 gameObjects.add(tick);
+
                 gameObjects.add(new NormalTower(4,5));
+                gameObjects.add(new NormalTower(10,3));
+                gameObjects.add(new NormalEnemy(2,12));
+                gameObjects.add(new Spawner(5,10,3));
+            /*    Image  test =new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");
+                ImageView testView=new ImageView(test);
+                gc.save();
+                gc.rotate(45);
+                gc.drawImage(test,10,10);
+                gc.restore();*/
+
 
 
              /*   if(tick.getTime()==0){
@@ -100,7 +112,7 @@ public class Main extends Application{
                     }
                 }*/
 
-                gameObjects.add(new Spawner(5,10,3));
+           //
 
 
                 stage.setScene(scene);
