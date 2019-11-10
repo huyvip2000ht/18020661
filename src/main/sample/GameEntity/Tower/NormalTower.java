@@ -9,13 +9,14 @@ import main.sample.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import main.sample.GameEntity.Enemy.AbtractEnemy;
+import main.sample.GameEntity.Tower.Bullet.NormalBullet;
 import main.sample.Point;
 
 import java.awt.*;
 import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 
-import static main.sample.Main.gameObjects;
+import static main.sample.Main.*;
 
 public class NormalTower extends AbtractTower {
     Image gunImg;
@@ -30,8 +31,9 @@ public class NormalTower extends AbtractTower {
         centerI=x*Config.scale-32;
         centerJ=y*Config.scale-32;
         damage = 1;
-        fireRate = 2;
-        fireRange = 2.6;
+        fireRate = 10;
+        fireRange = 5;
+        this.timeShot=0;
         this.angle=0;
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
@@ -57,7 +59,7 @@ public class NormalTower extends AbtractTower {
 
 
 
-        gc.fillOval(i-fireRange*Config.scale+32,j-fireRange*Config.scale+32,fireRange*Config.scale*2,fireRange*Config.scale*2);
+  //      gc.fillOval(i-fireRange*Config.scale+32,j-fireRange*Config.scale+32,fireRange*Config.scale*2,fireRange*Config.scale*2);
         gc.drawImage(baseImg,i,j);
         gc.drawImage(gun,i,j);
     }
@@ -71,20 +73,27 @@ public class NormalTower extends AbtractTower {
 
 
     public void update(){
-        for(GameObject a:gameObjects){
+     /*   for(GameObject a:gameObjects){
 
             if(a.getClass().getName()=="main.sample.GameEntity.Enemy.NormalEnemy"){
                 if(this.haveTarget((AbtractEnemy)a)){
                     this.angle= Angle.degree(this.centerI,this.centerJ,a.centerI,a.centerJ);
-                    System.out.println(angle);
-                }
 
-            }
+                    if(tick.getTime()>=timeShot+fireRate) {
+                        bullets.add(new NormalBullet(this.i, this.j, a.i, a.j));
+                        timeShot=tick.getTime();
+
+                    }
+                    //     System.out.println(angle);
+                    break;
+                }
+            }*/
+        super.update();
         }
 
 
 
-    }
+
 
 
 }

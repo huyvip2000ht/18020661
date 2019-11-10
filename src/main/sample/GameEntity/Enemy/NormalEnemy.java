@@ -4,12 +4,10 @@ import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import main.sample.Config;
+import main.sample.*;
 import javafx.scene.image.Image;
-import main.sample.Direction;
 import main.sample.GameEntity.Road;
 import main.sample.GameEntity.Tower.AbtractTower;
-import main.sample.GameObject;
 import main.sample.Point;
 
 import java.awt.*;
@@ -34,11 +32,11 @@ public class NormalEnemy extends AbtractEnemy {
     public NormalEnemy(int x,int y){
         this.x=x;
         this.y=y;
-        i = x * Config.scale;
-        j = y * Config.scale;
-        centerI=x*Config.scale-32;
-        centerJ=y*Config.scale-32;
-        health = 1;
+        i = x * Config.scale+32;
+        j = y * Config.scale+32;
+        centerI=x*Config.scale;
+        centerJ=y*Config.scale;
+        health = 5;
         reward = 2;
         speed = 7;
         direction= Direction.UP;
@@ -85,9 +83,11 @@ public class NormalEnemy extends AbtractEnemy {
 
 
     void calculateDirection(){
-        if (wayPointIndex >= Road.wayPoints.length) {
+        if (wayPointIndex >= Road.wayPoints.length-1) {
             // Enemy den way point cuoi
-            return;
+            Main.lives.setLives(Main.lives.getLives()-1);
+            gameObjects.remove(this);
+
         }
 
         Point currentWP = Road.wayPoints[wayPointIndex];
@@ -115,11 +115,16 @@ public class NormalEnemy extends AbtractEnemy {
                 if(this.isInRange(listIterator.next().)) System.out.println();
             }
         }*/
+    if(this.health<=0) {
+        Main.reward.setReward(Main.reward.getReward()+this.reward);
+        gameObjects.remove(this);
+    }
+
     for(GameObject a:gameObjects){
 
         if(a.getClass().getName()=="main.sample.GameEntity.Tower.NormalTower"){
-            if(this.isInRange((AbtractTower) a))
-                System.out.println("Trong tầm");
+            if(this.isInRange((AbtractTower) a));
+            //    System.out.println("Trong tầm");
            // System.out.println(Point.distance(this.centerI,this.centerJ,a.centerI,a.centerJ));
         /*    System.out.println("i enemy:"+centerI);
             System.out.println("j enemy:"+centerJ);

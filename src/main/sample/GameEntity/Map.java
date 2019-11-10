@@ -25,7 +25,7 @@ public class Map {
     public static void drawMap(GraphicsContext gc) {
         for (int i = 0; i < MAP_SPRITES.length; i++) {
             for (int j = 0; j < MAP_SPRITES[i].length; j++) {
-                Image image=new Image("file:src/main/AssetsKit_2/PNG/Retina/towerDefense_tile" + MAP_SPRITES[i][j] + ".png",64,64,true,true);
+                Image image=new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile" + MAP_SPRITES[i][j] + ".png");
 
                 gc.drawImage(image, j * Config.scale, i * Config.scale);
             }

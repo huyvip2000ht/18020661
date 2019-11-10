@@ -3,22 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/AbtractEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/AbtractEnemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/NormalEnemy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/NormalEnemy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Road.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Road.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Spawner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Spawner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Tower/AbtractTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Tower/AbtractTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Tower/NormalTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Tick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Tick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Angle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Angle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Enemy/AbtractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Enemy/AbtractEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Enemy/NormalEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Road.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Spawner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Tower/AbtractTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Tower/AbtractTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameEntity/Tower/NormalTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Tick.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,9 +110,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">

@@ -5,10 +5,10 @@ import main.sample.GameEntity.GameEntity;
 
 public abstract class AbtractEnemy extends GameObject implements GameEntity {
   //  Point point;
-    int health;
-    int reward;
-    int speed;
-    Direction direction;
+    public double health;
+    public int reward;
+    public int speed;
+    public Direction direction;
    /* public AbtractEnemy(Point point,Direction direction,int health,int reward,int speed,int armor){
         this.point=point;
         this.direction=direction;

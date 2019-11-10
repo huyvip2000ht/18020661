@@ -9,10 +9,11 @@ public class Road {
 
     public static final Point[] wayPoints = new Point[] {
         //    new Point(2 * Config.scale, 12* Config.scale-3),
-            new Point(2 * Config.scale, 6 * Config.scale),
-            new Point(6 * Config.scale, 6 * Config.scale),
-            new Point(6 * Config.scale, 1 * Config.scale),
-            new Point(11* Config.scale, 1 * Config.scale)
+            new Point(2 * Config.scale+32, 6 * Config.scale+32),
+            new Point(6 * Config.scale+32, 6 * Config.scale+32),
+            new Point(6 * Config.scale+32, 1 * Config.scale+32),
+            new Point(11* Config.scale, 1 * Config.scale+32),
+            new Point(11*Config.scale,1*Config.scale+32),
 
     };
     public static void drawPoints(GraphicsContext gc){

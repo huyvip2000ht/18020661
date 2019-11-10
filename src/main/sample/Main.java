@@ -17,6 +17,8 @@ import main.sample.GameEntity.Enemy.NormalEnemy;
 import main.sample.GameEntity.Map;
 import main.sample.GameEntity.Road;
 import main.sample.GameEntity.Spawner;
+import main.sample.GameEntity.Tower.Bullet.AbtractBullet;
+import main.sample.GameEntity.Tower.Bullet.NormalBullet;
 import main.sample.GameEntity.Tower.NormalTower;
 
 import java.util.ArrayList;
@@ -33,8 +35,13 @@ public class Main extends Application{
   //  final public Scale srink=new Scale(0.5,0.5);
     public static GraphicsContext gc;
     public static List<GameObject> gameObjects = new ArrayList<>();
+    public static List<Spawner> spawners=new ArrayList<>();
+    public static List<AbtractBullet> bullets=new ArrayList<>();
   //  public static List<NormalTower>
     public static Tick tick=new Tick();
+
+    public static Reward reward=new Reward(300);
+    public static Lives lives=new Lives(20);
     public static void main(String[] args) {
         Application.launch(args);
     }
@@ -57,7 +64,7 @@ public class Main extends Application{
 
         stage.setResizable(false);
 
-     /*   Image image_button = new Image("file:src/main/AssetsKit_2/PlayButton.png");
+        Image image_button = new Image("file:src/main/AssetsKit_2/PlayButton.png");
         ImageView imageView_button=new ImageView(image_button);
 
         Image image_menu = new Image("file:src/main/AssetsKit_2/Menu.png");
@@ -70,14 +77,13 @@ public class Main extends Application{
         Button button=new Button("",imageView_button);
         button.setWrapText(true);
         button.setTranslateX(Config.width*Config.scale/2-192/2);
-        button.setTranslateY(Config.height*Config.scale/2-128/2);*/
+        button.setTranslateY(Config.height*Config.scale/2-128/2);
 
-     //   button.setOnAction(new EventHandler<ActionEvent>() {
-      //      @Override
-      //      public void handle(ActionEvent actionEvent) {
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
 
-       //         root.getChildren().removeAll(imageView_menu,button);
-
+                root.getChildren().removeAll(imageView_menu, button);
 
 
                 AnimationTimer timer = new AnimationTimer() {
@@ -89,14 +95,19 @@ public class Main extends Application{
 
                     }
                 };
+
                 timer.start();
+            }});
+
 
                 gameObjects.add(tick);
-
+                gameObjects.add(reward);
+                gameObjects.add(lives);
                 gameObjects.add(new NormalTower(4,5));
                 gameObjects.add(new NormalTower(10,3));
-                gameObjects.add(new NormalEnemy(2,12));
-                gameObjects.add(new Spawner(5,10,3));
+             //   gameObjects.add(new NormalEnemy(2,12));
+            //    gameObjects.add(new NormalBullet(10,10,70,70,135));
+                spawners.add(new Spawner(10,20,5));
             /*    Image  test =new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");
                 ImageView testView=new ImageView(test);
                 gc.save();
@@ -114,13 +125,22 @@ public class Main extends Application{
 
            //
 
-
+                root.getChildren().add(button);
                 stage.setScene(scene);
                 stage.show();
             }
 
     public void update() {
+        spawners.forEach(Spawner::update);
+
         gameObjects.forEach(GameObject::update);
+    //    bullets.forEach(AbtractBullet::update);
+
+        for(Iterator<AbtractBullet> iterator=bullets.iterator();iterator.hasNext();){
+       //     AbtractBullet abtractBullet=iterator.next();
+            iterator.next().update();
+        }
+
 
     }
 
@@ -130,7 +150,10 @@ public class Main extends Application{
       //  for(ListIterator<GameObject> listIterator=gameObjects.listIterator();listIterator.hasNext();){
 
        // }
+        spawners.forEach(g->g.render(gc));
+        bullets.forEach(g->g.render(gc));
         gameObjects.forEach(g -> g.render(gc));
+
     }
 
 
