@@ -13,18 +13,16 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import main.sample.GameEntity.Enemy.NormalEnemy;
-import main.sample.GameEntity.Map;
-import main.sample.GameEntity.Road;
-import main.sample.GameEntity.Spawner;
-import main.sample.GameEntity.Tower.Bullet.AbtractBullet;
-import main.sample.GameEntity.Tower.Bullet.NormalBullet;
-import main.sample.GameEntity.Tower.NormalTower;
+import main.sample.GameObject.IngameObject.IngameObject;
+import main.sample.GameObject.IngameObject.Spawner.Spawner;
+import main.sample.GameObject.IngameObject.Tower.NormalTower;
+import main.sample.GameObject.GameObject;
+import main.sample.GameObject.OutgameObject.Lives;
+import main.sample.GameObject.OutgameObject.OutgameObject;
+import main.sample.GameObject.OutgameObject.Reward;
+import main.sample.GameObject.OutgameObject.Tick;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 
 public class Main extends Application{
@@ -34,14 +32,18 @@ public class Main extends Application{
 
   //  final public Scale srink=new Scale(0.5,0.5);
     public static GraphicsContext gc;
-    public static List<GameObject> gameObjects = new ArrayList<>();
-    public static List<Spawner> spawners=new ArrayList<>();
-    public static List<AbtractBullet> bullets=new ArrayList<>();
+ //   public static List<GameObject> gameObjects = new ArrayList<>();
+   // public static List<Spawner> spawners=new ArrayList<>();
+ //   public static List<AbtractBullet> bullets=new ArrayList<>();
   //  public static List<NormalTower>
     public static Tick tick=new Tick();
-
+    public static AnimationTimer timer;
     public static Reward reward=new Reward(300);
-    public static Lives lives=new Lives(20);
+    public static Lives lives=new Lives(3);
+
+    public static List<IngameObject> ingameObjects=new ArrayList<>();
+    public static List<OutgameObject> outgameObjects=new ArrayList<>();
+
     public static void main(String[] args) {
         Application.launch(args);
     }
@@ -86,44 +88,33 @@ public class Main extends Application{
                 root.getChildren().removeAll(imageView_menu, button);
 
 
-                AnimationTimer timer = new AnimationTimer() {
+                  timer = new AnimationTimer() {
                     @Override
                     public void handle(long l) {
 
                         render();
-                        update();
+                        try{
+                        update();}
+                        catch (ConcurrentModificationException e){}
+
 
                     }
+
                 };
 
                 timer.start();
+
             }});
+                outgameObjects.add(tick);
+                outgameObjects.add(reward);
+                outgameObjects.add(lives);
+                ingameObjects.add(new NormalTower(4,5));
+                ingameObjects.add(new NormalTower(9,3));
 
-
-                gameObjects.add(tick);
-                gameObjects.add(reward);
-                gameObjects.add(lives);
-                gameObjects.add(new NormalTower(4,5));
-                gameObjects.add(new NormalTower(10,3));
-             //   gameObjects.add(new NormalEnemy(2,12));
-            //    gameObjects.add(new NormalBullet(10,10,70,70,135));
-                spawners.add(new Spawner(10,20,5));
-            /*    Image  test =new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");
-                ImageView testView=new ImageView(test);
-                gc.save();
-                gc.rotate(45);
-                gc.drawImage(test,10,10);
-                gc.restore();*/
+                ingameObjects.add(new Spawner(10,10,10));
 
 
 
-             /*   if(tick.getTime()==0){
-                    for (int x=0;x<10;x++){
-                        if(tick.getTime()==10+x*5) gameObjects.add(new NormalEnemy(2,12));
-                    }
-                }*/
-
-           //
 
                 root.getChildren().add(button);
                 stage.setScene(scene);
@@ -131,41 +122,25 @@ public class Main extends Application{
             }
 
     public void update() {
-        spawners.forEach(Spawner::update);
 
-        gameObjects.forEach(GameObject::update);
-    //    bullets.forEach(AbtractBullet::update);
-
-        for(Iterator<AbtractBullet> iterator=bullets.iterator();iterator.hasNext();){
-       //     AbtractBullet abtractBullet=iterator.next();
-            iterator.next().update();
-        }
-
+        outgameObjects.forEach(OutgameObject::update);
+        ingameObjects.forEach(IngameObject::update);
 
     }
 
     public void render() {
-        Map.drawMap(gc);
-        Road.drawPoints(gc);
-      //  for(ListIterator<GameObject> listIterator=gameObjects.listIterator();listIterator.hasNext();){
 
-       // }
-        spawners.forEach(g->g.render(gc));
-        bullets.forEach(g->g.render(gc));
-        gameObjects.forEach(g -> g.render(gc));
+       // Map.autoDrawMap();
+
+        Map.drawMapIn(gc);
+        ingameObjects.forEach(g ->g.render(gc));
+        Map.drawMapOut(gc);
+        outgameObjects.forEach(g -> g.render(gc));
+
+
 
     }
 
-
-
-       // root.getChildren().add(button);
-
-
-
-
-
-       // gameObjects.add(createTank());
-        //gameObjects.add(createTower());
     }
 
 
