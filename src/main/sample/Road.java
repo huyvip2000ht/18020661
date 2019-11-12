@@ -12,8 +12,8 @@ public class Road {
             new Point(2 * Config.scale+32, 6 * Config.scale+32),
             new Point(6 * Config.scale+32, 6 * Config.scale+32),
             new Point(6 * Config.scale+32, 1 * Config.scale+32),
-            new Point(11* Config.scale, 1 * Config.scale+32),
-            new Point(11*Config.scale,1*Config.scale+32),
+            new Point(12* Config.scale, 1 * Config.scale+32),
+            new Point(12*Config.scale,1*Config.scale+32),
 
     };
     public static void drawPoints(GraphicsContext gc){

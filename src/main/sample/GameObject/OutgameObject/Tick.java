@@ -43,7 +43,7 @@ public class Tick extends OutgameObject {
 
             a=getTime();
         }
-       System.out.println(time[0]);
+     //  System.out.println(time[0]);
 
         second=System.currentTimeMillis()/1000;
     }

@@ -2,53 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Enemy/AbtractEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Enemy/NormalEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/Menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/Menu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/FPS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/AbtractEnemy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/NormalEnemy$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Enemy/NormalEnemy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/GameEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Map.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Road.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Spawner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Target.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Tower/AbtractTower.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Tower/Bullet/AbtractBullet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Tower/Bullet/NormalBullet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameEntity/Tower/NormalTower.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Lives.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/PNG/Default size/towerDefense_tile245.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/PNG/Default size/towerDefense_tile245.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/NormalBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/NormalBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Spawner/Spawner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Spawner/Spawner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/AbtractTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/AbtractTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/MenuStage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Reward.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Tick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/Menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/Menu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Circle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/FPS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Enemy/AbtractEnemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Enemy/NormalEnemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/GameEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Road.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Spawner/Spawner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Target.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Tower/AbtractTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/AbtractTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Tower/Bullet/AbtractBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/AbtractBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Tower/Bullet/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/NormalBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameEntity/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/NormalTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Lives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Lives.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Road.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Road.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile245.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile245.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile247.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile247.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/AbtractBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/AbtractBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/NormalBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Enemy/AbtractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Enemy/AbtractEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Enemy/NormalEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Spawner/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Spawner/Spawner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/AbtractTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/AbtractTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/NormalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Tick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/MenuStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Reward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Reward.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Road.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,11 +118,12 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Documents\GitHub\18020661\src\main" />
+      <recent name="C:\Users\HP\Documents\GitHub\18020661\src\main\AssetsKit_2" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HP\Documents\GitHub\18020661\src\GameTile" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\HP\Documents\GitHub\18020661\src\main\AssetsKit_2" />
     </key>
   </component>
   <component name="RunDashboard">

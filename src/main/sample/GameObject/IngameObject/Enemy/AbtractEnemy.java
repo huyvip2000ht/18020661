@@ -14,6 +14,9 @@ public abstract class AbtractEnemy extends IngameObject {
     public int reward;
     public int speed;
     public Direction direction;
+    public int widthImg;
+    public int heightImg;
+
 
 
   public int wayPointIndex = 0;

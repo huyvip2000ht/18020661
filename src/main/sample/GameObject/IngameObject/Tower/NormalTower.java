@@ -20,10 +20,10 @@ public class NormalTower extends AbtractTower {
         this.y = y;
         i = x * Config.scale;
         j = y * Config.scale;
-        centerI=x*Config.scale-32;
-        centerJ=y*Config.scale-32;
-        damage = 1;
-        fireRate = 10;
+        centerI=x*Config.scale+32;
+        centerJ=y*Config.scale+32;
+        damage = 3;
+        fireRate = 15;
         fireRange = 3;
         this.timeShot=0;
         this.angle=0;
@@ -48,6 +48,12 @@ public class NormalTower extends AbtractTower {
         gc.strokeOval(i-fireRange*Config.scale+32,j-fireRange*Config.scale+32,fireRange*Config.scale*2,fireRange*Config.scale*2);
         gc.drawImage(baseImg,i,j);
         gc.drawImage(gun,i,j);
+
+        gc.setFill(Color.BLACK);
+        gc.fillOval(i-5, j-5,10, 10);
+        gc.setFill(Color.RED);
+        gc.fillOval(centerI-5,centerJ-5,10,10);
+        gc.setFill(Color.BLACK);
     }
 
 }

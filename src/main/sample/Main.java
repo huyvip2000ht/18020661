@@ -13,14 +13,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import main.sample.GameObject.IngameObject.Enemy.BossEnemy;
 import main.sample.GameObject.IngameObject.IngameObject;
 import main.sample.GameObject.IngameObject.Spawner.Spawner;
+import main.sample.GameObject.IngameObject.Tower.MachineGunTower;
 import main.sample.GameObject.IngameObject.Tower.NormalTower;
 import main.sample.GameObject.GameObject;
-import main.sample.GameObject.OutgameObject.Lives;
-import main.sample.GameObject.OutgameObject.OutgameObject;
-import main.sample.GameObject.OutgameObject.Reward;
-import main.sample.GameObject.OutgameObject.Tick;
+import main.sample.GameObject.IngameObject.Tower.SniperTower;
+import main.sample.GameObject.OutgameObject.*;
 
 import java.util.*;
 
@@ -39,8 +39,9 @@ public class Main extends Application{
     public static Tick tick=new Tick();
     public static AnimationTimer timer;
     public static Reward reward=new Reward(300);
-    public static Lives lives=new Lives(3);
-
+    public static Lives lives=new Lives(20);
+    public static Store store=new Store();
+    public static Group root = new Group();
     public static List<IngameObject> ingameObjects=new ArrayList<>();
     public static List<OutgameObject> outgameObjects=new ArrayList<>();
 
@@ -55,11 +56,21 @@ public class Main extends Application{
         gc = canvas.getGraphicsContext2D();
 
         // Tao root container
-        Group root = new Group();
+
         root.getChildren().add(canvas);
 
         // Tao scene
         Scene scene = new Scene(root);
+
+
+
+/*
+        Group root1 = new Group();
+        root1.getChildren().add(canvas);
+        Scene scene1=new Scene(root1);
+*/
+
+
 
         // Them scene vao stage
         stage.setTitle("main.sample.GameEntity.Tower Defense");
@@ -104,18 +115,21 @@ public class Main extends Application{
 
                 timer.start();
 
-            }});
+            }
+        });
                 outgameObjects.add(tick);
                 outgameObjects.add(reward);
                 outgameObjects.add(lives);
-                ingameObjects.add(new NormalTower(4,5));
+                outgameObjects.add(store);
+                ingameObjects.add(new MachineGunTower(4,5));
                 ingameObjects.add(new NormalTower(9,3));
+                ingameObjects.add(new SniperTower(11,6));
+                ingameObjects.add(new BossEnemy(2,12));
+                ingameObjects.add(new Spawner(10,10,100));
 
-                ingameObjects.add(new Spawner(10,10,10));
 
 
-
-
+                root.getChildren().add(Store.circle);
                 root.getChildren().add(button);
                 stage.setScene(scene);
                 stage.show();
@@ -133,15 +147,14 @@ public class Main extends Application{
        // Map.autoDrawMap();
 
         Map.drawMapIn(gc);
+        Road.drawPoints(gc);
         ingameObjects.forEach(g ->g.render(gc));
         Map.drawMapOut(gc);
         outgameObjects.forEach(g -> g.render(gc));
 
-
-
     }
 
-    }
+}
 
 
 
