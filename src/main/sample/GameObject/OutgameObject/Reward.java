@@ -2,7 +2,6 @@ package main.sample.GameObject.OutgameObject;
 
 import javafx.scene.canvas.GraphicsContext;
 import main.sample.Config;
-import main.sample.GameObject.GameObject;
 
 public class Reward extends OutgameObject {
 
@@ -11,8 +10,8 @@ public class Reward extends OutgameObject {
     public Reward(int reward){
         this.reward=reward;
 
-        this.i=13* Config.scale;
-        this.j=2*Config.scale;
+        this.i=13* Config.SCALE;
+        this.j=2*Config.SCALE;
     }
 
     public int getReward() {

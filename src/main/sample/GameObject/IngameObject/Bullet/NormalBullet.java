@@ -26,8 +26,8 @@ public class NormalBullet extends AbtractBullet {
 
         this.owner=owner;
 
-        damage=5;
-        speed=15;
+        damage=Config.NORMAL_GUN_DAMAGE;
+        speed=Config.NORMAL_GUN_SPEED;
         this.angle=angle;
 
         bulletImg=new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile272.png") ;

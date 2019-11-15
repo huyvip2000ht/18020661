@@ -7,7 +7,6 @@ import main.sample.Config;
 import main.sample.Direction;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import java.awt.*;
 
 public class BossEnemy extends AbtractEnemy{
     Image image;
@@ -19,13 +18,13 @@ public class BossEnemy extends AbtractEnemy{
         widthImg= (int) image.getWidth();
         heightImg= (int) image.getHeight();
 
-        i = x * Config.scale+32;
-        j = y * Config.scale+32;
-        centerI=x*Config.scale+32+widthImg/2;
-        centerJ=y*Config.scale+32+heightImg/2;
-        health = 50;
-        reward = 100;
-        speed = 1;
+        i = x * Config.SCALE +32;
+        j = y * Config.SCALE +32;
+        centerI=x*Config.SCALE +32+widthImg/2;
+        centerJ=y*Config.SCALE +32+heightImg/2;
+        health = Config.BOSS_HEALTH;
+        reward = Config.BOSS_REWARD;
+        speed = Config.BOSS_SPEED;
         direction= Direction.UP;
 
 
@@ -44,6 +43,14 @@ public class BossEnemy extends AbtractEnemy{
         gc.fillOval(i-5, j-5,10, 10);
         gc.setFill(Color.RED);
         gc.fillOval(centerI-5,centerJ-5,10,10);
+
+
+        gc.setFill(Color.RED);
+        gc.fillRect(i,j-5,widthImg,5);
+        gc.setFill(Color.GREEN);
+        gc.fillRect(i,j-5,(double) (widthImg)*this.health/Config.BOSS_HEALTH,5);
         gc.setFill(Color.BLACK);
+        gc.setStroke(Color.BLACK);
+        gc.strokeRect(i,j-5,widthImg,5);
     }
 }

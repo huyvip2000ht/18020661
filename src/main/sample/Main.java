@@ -13,37 +13,33 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import main.sample.GameObject.IngameObject.Enemy.BossEnemy;
 import main.sample.GameObject.IngameObject.IngameObject;
 import main.sample.GameObject.IngameObject.Spawner.Spawner;
-import main.sample.GameObject.IngameObject.Tower.MachineGunTower;
-import main.sample.GameObject.IngameObject.Tower.NormalTower;
-import main.sample.GameObject.GameObject;
-import main.sample.GameObject.IngameObject.Tower.SniperTower;
 import main.sample.GameObject.OutgameObject.*;
 
 import java.util.*;
 
 
-public class Main extends Application{
+public class Main extends Application {
 
 
-
-
-  //  final public Scale srink=new Scale(0.5,0.5);
+    //  final public Scale srink=new Scale(0.5,0.5);
     public static GraphicsContext gc;
- //   public static List<GameObject> gameObjects = new ArrayList<>();
-   // public static List<Spawner> spawners=new ArrayList<>();
- //   public static List<AbtractBullet> bullets=new ArrayList<>();
-  //  public static List<NormalTower>
-    public static Tick tick=new Tick();
+    //   public static List<GameObject> gameObjects = new ArrayList<>();
+    // public static List<Spawner> spawners=new ArrayList<>();
+    //   public static List<AbtractBullet> bullets=new ArrayList<>();
+    //  public static List<NormalTower>
+    public static Tick tick = new Tick();
     public static AnimationTimer timer;
-    public static Reward reward=new Reward(300);
-    public static Lives lives=new Lives(20);
-    public static Store store=new Store();
+    public static Reward reward = new Reward(Config.REWARD);
+    public static Lives lives = new Lives(Config.LIVES);
+    public static Store store = new Store();
     public static Group root = new Group();
-    public static List<IngameObject> ingameObjects=new ArrayList<>();
-    public static List<OutgameObject> outgameObjects=new ArrayList<>();
+    public static Scene scene = new Scene(root);
+    public static List<IngameObject> ingameObjects = new ArrayList<>();
+    public static List<OutgameObject> outgameObjects = new ArrayList<>();
+    public static Spawner spawner = new Spawner(10, 10, 100);
+    public static Levels levels = new Levels();
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -52,7 +48,7 @@ public class Main extends Application{
     @Override
     public void start(Stage stage) {
         // Tao Canvas
-        Canvas canvas = new Canvas(Config.width * Config.scale, Config.height*Config.scale);
+        Canvas canvas = new Canvas(Config.WIDTH * Config.SCALE, Config.HEIGHT * Config.SCALE);
         gc = canvas.getGraphicsContext2D();
 
         // Tao root container
@@ -60,7 +56,7 @@ public class Main extends Application{
         root.getChildren().add(canvas);
 
         // Tao scene
-        Scene scene = new Scene(root);
+        //      Scene scene = new Scene(root);
 
 
 
@@ -71,42 +67,43 @@ public class Main extends Application{
 */
 
 
-
-        // Them scene vao stage
         stage.setTitle("main.sample.GameEntity.Tower Defense");
-
         stage.setResizable(false);
 
+
         Image image_button = new Image("file:src/main/AssetsKit_2/PlayButton.png");
-        ImageView imageView_button=new ImageView(image_button);
+        ImageView imageView_button = new ImageView(image_button);
 
         Image image_menu = new Image("file:src/main/AssetsKit_2/Menu.png");
         ImageView imageView_menu = new ImageView(image_menu);
-        imageView_menu.setFitHeight(Config.height*Config.scale);
-        imageView_menu.setFitWidth(Config.width*Config.scale);
+        imageView_menu.setFitHeight(Config.HEIGHT * Config.SCALE);
+        imageView_menu.setFitWidth(Config.WIDTH * Config.SCALE);
         root.getChildren().add(imageView_menu);
 
 
-        Button button=new Button("",imageView_button);
+        Button button = new Button("", imageView_button);
         button.setWrapText(true);
-        button.setTranslateX(Config.width*Config.scale/2-192/2);
-        button.setTranslateY(Config.height*Config.scale/2-128/2);
+        button.setTranslateX(Config.WIDTH * Config.SCALE / 2 - 192 / 2);
+        button.setTranslateY(Config.HEIGHT * Config.SCALE / 2 - 128 / 2);
 
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
 
                 root.getChildren().removeAll(imageView_menu, button);
+                root.getChildren().add(Store.normal);
+                root.getChildren().add(Store.machineGun);
+                root.getChildren().add(Store.sniper);
 
-
-                  timer = new AnimationTimer() {
+                timer = new AnimationTimer() {
                     @Override
                     public void handle(long l) {
+                        try {
+                            render();
 
-                        render();
-                        try{
-                        update();}
-                        catch (ConcurrentModificationException e){}
+                            update();
+                        } catch (ConcurrentModificationException e) {
+                        }
 
 
                     }
@@ -117,38 +114,36 @@ public class Main extends Application{
 
             }
         });
-                outgameObjects.add(tick);
-                outgameObjects.add(reward);
-                outgameObjects.add(lives);
-                outgameObjects.add(store);
-                ingameObjects.add(new MachineGunTower(4,5));
-                ingameObjects.add(new NormalTower(9,3));
-                ingameObjects.add(new SniperTower(11,6));
-                ingameObjects.add(new BossEnemy(2,12));
-                ingameObjects.add(new Spawner(10,10,100));
+        outgameObjects.add(tick);
+        outgameObjects.add(reward);
 
+        outgameObjects.add(store);
 
+        ingameObjects.add(spawner);
+        Map.autoDrawMap();
+        outgameObjects.add(lives);
+        root.getChildren().add(button);
 
-                root.getChildren().add(Store.circle);
-                root.getChildren().add(button);
-                stage.setScene(scene);
-                stage.show();
-            }
+        stage.setScene(scene);
+        stage.show();
+    }
 
-    public void update() {
+    public static void update() {
 
         outgameObjects.forEach(OutgameObject::update);
         ingameObjects.forEach(IngameObject::update);
 
+
     }
 
-    public void render() {
+    public static void render() {
 
-       // Map.autoDrawMap();
+        //  Map.autoDrawMap();
+        //   System.out.println();
 
         Map.drawMapIn(gc);
         Road.drawPoints(gc);
-        ingameObjects.forEach(g ->g.render(gc));
+        ingameObjects.forEach(g -> g.render(gc));
         Map.drawMapOut(gc);
         outgameObjects.forEach(g -> g.render(gc));
 

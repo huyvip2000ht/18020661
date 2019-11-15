@@ -2,6 +2,7 @@ package main.sample.GameObject.IngameObject.Bullet;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import main.sample.Config;
 import main.sample.GameObject.IngameObject.Tower.AbtractTower;
 
 import java.util.Random;
@@ -19,8 +20,8 @@ public class MachineGunBullet extends AbtractBullet {
 
         this.owner=owner;
 
-        damage=1;
-        speed=5;
+        damage= Config.MACHINE_GUN_DAMAGE;
+        speed=Config.MACHINE_GUN_SPEED;
         Random random=new Random();
         this.angle=angle+random.nextInt(60)-30;
 

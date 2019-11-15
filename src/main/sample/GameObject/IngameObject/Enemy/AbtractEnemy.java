@@ -7,12 +7,13 @@ import main.sample.GameObject.IngameObject.Tower.AbtractTower;
 
 //import static main.sample.Main.gameObjects;
 import static main.sample.Main.ingameObjects;
+import static main.sample.Main.spawner;
 
 public abstract class AbtractEnemy extends IngameObject {
 
     public double health;
     public int reward;
-    public int speed;
+    public double speed;
     public Direction direction;
     public int widthImg;
     public int heightImg;
@@ -29,7 +30,7 @@ public abstract class AbtractEnemy extends IngameObject {
 
   public boolean isInRange(AbtractTower tower){
     if (Point.distance(this.centerI,this.centerJ,tower.centerI,tower.centerJ)
-            <=tower.getFireRange()*Config.scale){
+            <=tower.getFireRange()*Config.SCALE){
       return true;
     }
     return false;
@@ -40,7 +41,7 @@ public abstract class AbtractEnemy extends IngameObject {
       // Enemy den way point cuoi
       Main.lives.setLives(Main.lives.getLives()-1);
 
-      ingameObjects.remove(this);
+      spawner.enemies.remove(this);
 
     }
 
@@ -70,23 +71,10 @@ public abstract class AbtractEnemy extends IngameObject {
         }*/
     if(this.health<=0) {
       Main.reward.setReward(Main.reward.getReward()+this.reward);
-      ingameObjects.remove(this);
+      spawner.enemies.remove(this);
     }
 
-    for(IngameObject a:ingameObjects){
 
-      if(a.getClass().getName()=="main.sample.GameObject.IngameObject.Tower.NormalTower"){
-        if(this.isInRange((AbtractTower) a));
-        //    System.out.println("Trong tầm");
-        // System.out.println(Point.distance(this.centerI,this.centerJ,a.centerI,a.centerJ));
-        /*    System.out.println("i enemy:"+centerI);
-            System.out.println("j enemy:"+centerJ);
-            System.out.println("i tower:"+a.centerI);
-            System.out.println("j tower"+a.centerJ);*/
-      }
-
-
-    }
 
 
     calculateDirection();

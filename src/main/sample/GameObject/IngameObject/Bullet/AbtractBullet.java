@@ -4,15 +4,17 @@ import main.sample.Config;
 import main.sample.GameObject.IngameObject.Enemy.AbtractEnemy;
 import main.sample.GameObject.IngameObject.IngameObject;
 import main.sample.GameObject.IngameObject.Tower.AbtractTower;
+import main.sample.Main;
 import main.sample.Point;
 
 import static main.sample.Main.ingameObjects;
+import static main.sample.Main.spawner;
 
 public abstract class AbtractBullet extends IngameObject {
 
     public double speed;
 
-    public int damage;
+    public double damage;
     public double angle;
     public AbtractTower owner;
 
@@ -24,7 +26,7 @@ public abstract class AbtractBullet extends IngameObject {
         return false;
     }
     public boolean isOutRange(){
-        if(Point.distance(i,j,owner.i,owner.j)+speed>=owner.getFireRange()* Config.scale) return true;
+        if(Point.distance(i,j,owner.i,owner.j)+speed>=owner.getFireRange()* Config.SCALE) return true;
         return false;
     }
 
@@ -36,19 +38,17 @@ public abstract class AbtractBullet extends IngameObject {
 
 
 
-        for (IngameObject a : ingameObjects) {
+        for (AbtractEnemy a: spawner.enemies) {
 
-            if (    a.getClass().getName() == "main.sample.GameObject.IngameObject.Enemy.NormalEnemy"||
-                    a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.SmallerEnemy"||
-                    a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.BossEnemy"||
-                    a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.TankerEnemy") {
-                if (this.isInHitbox((AbtractEnemy) a)) {
+                if (this.isInHitbox(a)) {
 
-                    ((AbtractEnemy) a).health=((AbtractEnemy) a).health-this.damage;
+                    a.health= a.health-this.damage;
+
                     owner.bullets.remove(this);
-
+                    break;
                 }
-            }
+         //   }
+
         }
 
         //  System.out.println(angle);

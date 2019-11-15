@@ -2,20 +2,24 @@ package main.sample.GameObject.OutgameObject;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import main.sample.Config;
-import main.sample.GameObject.GameObject;
 import main.sample.Main;
+
+import java.util.List;
+
+import static main.sample.Main.*;
 
 public class Lives extends OutgameObject {
     public int lives;
     public Lives(int lives){
         this.lives=lives;
 
-        this.i=13* Config.scale;
-        this.j=3*Config.scale;
+        this.i=13* Config.SCALE;
+        this.j=3*Config.SCALE;
     }
 
     public int getLives() {
@@ -37,8 +41,14 @@ public class Lives extends OutgameObject {
         gc.fillText(toString(),i,j);
         if(lives<=0) {
 
-            Main.timer.stop();
-            gc.drawImage(new Image("file:src/main/AssetsKit_2/Gameover.jpg"),0,0);
+          //  Main.timer.stop();
+
+         //   Main.outgameObjects.clear();
+            ImageView a=new ImageView(new Image("file:src/main/AssetsKit_2/Gameover.jpg"));
+            a.setFitWidth(16*Config.SCALE);
+            a.setFitHeight(12*Config.SCALE);
+            root.getChildren().add(a);
+           // gc.drawImage(new Image("file:src/main/AssetsKit_2/Gameover.jpg"),0,0,16*Config.SCALE,12*Config.SCALE);
         }
     }
 

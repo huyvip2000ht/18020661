@@ -14,8 +14,7 @@ import main.sample.GameObject.IngameObject.Bullet.MachineGunBullet;
 import main.sample.GameObject.IngameObject.Enemy.AbtractEnemy;
 import main.sample.GameObject.IngameObject.IngameObject;
 
-import static main.sample.Main.ingameObjects;
-import static main.sample.Main.tick;
+import static main.sample.Main.*;
 
 public class MachineGunTower extends AbtractTower {
     Image gunImg;
@@ -25,27 +24,28 @@ public class MachineGunTower extends AbtractTower {
     public MachineGunTower(int x, int y) {
         this.x = x;
         this.y = y;
-        i = x * Config.scale;
-        j = y * Config.scale;
-        centerI=x*Config.scale+32;
-        centerJ=y*Config.scale+32;
-        damage = 1;
-        fireRate = 5;
-        fireRange = 3;
+        i = x * Config.SCALE;
+        j = y * Config.SCALE;
+        centerI=x*Config.SCALE +32;
+        centerJ=y*Config.SCALE +32;
+        damage = Config.MACHINE_GUN_DAMAGE;
+        fireRate = Config.MACHINE_GUN_FIRE_RATE;
+        fireRange = Config.MACHINE_GUN_FIRE_RANGE;
         this.timeShot=0;
         this.angle=0;
+       // value=500;
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile250.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
     }
     public void update(){
-        for(IngameObject a:ingameObjects){
+        for(AbtractEnemy a:spawner.enemies){
 
             if(     a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.NormalEnemy"||
                     a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.SmallerEnemy"||
                     a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.BossEnemy"||
                     a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.TankerEnemy"){
-                if(this.haveTarget((AbtractEnemy)a)){
-                    this.angle= Angle.degree(this.centerI,this.centerJ,((AbtractEnemy) a).centerI,((AbtractEnemy) a).centerJ);
+                if(this.haveTarget(a)){
+                    this.angle= Angle.degree(this.centerI,this.centerJ, a.centerI, a.centerJ);
                     if(tick.getTime()>=timeShot+fireRate) {
                         bullets.add(new MachineGunBullet(this.i, this.j,this.angle,this));
                         timeShot=tick.getTime();
@@ -77,8 +77,10 @@ public class MachineGunTower extends AbtractTower {
 
         bullets.forEach(g->g.render(gc));
         gc.setStroke(Color.GREENYELLOW);
-        gc.strokeOval(i-fireRange*Config.scale+32,j-fireRange*Config.scale+32,fireRange*Config.scale*2,fireRange*Config.scale*2);
+        gc.strokeOval(i-fireRange*Config.SCALE +32,j-fireRange*Config.SCALE +32,fireRange*Config.SCALE *2,fireRange*Config.SCALE *2);
+
         gc.drawImage(baseImg,i,j);
         gc.drawImage(gun,i,j);
+
     }
 }

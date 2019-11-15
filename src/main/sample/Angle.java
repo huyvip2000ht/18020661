@@ -2,13 +2,13 @@ package main.sample;
 
 public class Angle {
 
-        double angl;
-        public Angle(){
+     //   double angl;
+    /*    public Angle(){
 
-        }
-        public Angle(double angle){
+        }*/
+      /*  public Angle(double angle){
             this.angl=angle;
-        }
+        }*/
         public static double degree(int x1,int y1,int x2,int y2){
                 // x1,y1 là gốc
             int vectorX=x2-x1;

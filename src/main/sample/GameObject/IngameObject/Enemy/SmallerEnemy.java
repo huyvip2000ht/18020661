@@ -7,7 +7,6 @@ import main.sample.Config;
 import main.sample.Direction;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import java.awt.*;
 
 public class SmallerEnemy extends AbtractEnemy{
     Image image;
@@ -20,13 +19,13 @@ public class SmallerEnemy extends AbtractEnemy{
         widthImg= (int) image.getWidth();
         heightImg= (int) image.getHeight();
 
-        i = x * Config.scale+32;
-        j = y * Config.scale+32;
-        centerI=x*Config.scale+32+widthImg/2;
-        centerJ=y*Config.scale+32+heightImg/2;
-        health = 2;
-        reward = 1;
-        speed = 9;
+        i = x * Config.SCALE +32;
+        j = y * Config.SCALE +32;
+        centerI=x*Config.SCALE +32+widthImg/2;
+        centerJ=y*Config.SCALE +32+heightImg/2;
+        health = Config.SMALLER_HEALTH;
+        reward = Config.SMALLER_REWARD;
+        speed = Config.SMALLER_SPEED;
         direction= Direction.UP;
 
 
@@ -47,5 +46,12 @@ public class SmallerEnemy extends AbtractEnemy{
         gc.setFill(Color.RED);
         gc.fillOval(centerI-5,centerJ-5,10,10);
         gc.setFill(Color.BLACK);
+        gc.setFill(Color.RED);
+        gc.fillRect(i,j-5,widthImg,5);
+        gc.setFill(Color.GREEN);
+        gc.fillRect(i,j-5,(double) (widthImg)*this.health/Config.SMALLER_HEALTH,5);
+        gc.setFill(Color.BLACK);
+        gc.setStroke(Color.BLACK);
+        gc.strokeRect(i,j-5,widthImg,5);
     }
 }

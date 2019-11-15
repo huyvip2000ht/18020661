@@ -14,17 +14,17 @@ public class TankerEnemy extends AbtractEnemy {
     public TankerEnemy(int x,int y){
         this.x=x;
         this.y=y;
-        i = x * Config.scale+32;
-        j = y * Config.scale+32;
+        i = x * Config.SCALE +32;
+        j = y * Config.SCALE +32;
         image=new Image("file:src/main/kenney_topdowntanksredux/PNG/Default size/tank_bigRed.png");
         widthImg= (int) image.getWidth();
         heightImg= (int) image.getHeight();
 
-        centerI=x*Config.scale+32+widthImg/2;
-        centerJ=y*Config.scale+32+heightImg/2;
-        health = 20;
-        reward = 10;
-        speed = 2;
+        centerI=x*Config.SCALE +32+widthImg/2;
+        centerJ=y*Config.SCALE +32+heightImg/2;
+        health = Config.TANKER_HEALTH;
+        reward = Config.TANKER_REWARD;
+        speed = Config.TANKER_SPEED;
         direction= Direction.UP;
 
     }
@@ -40,6 +40,13 @@ public class TankerEnemy extends AbtractEnemy {
         gc.fillOval(i-5, j-5,10, 10);
         gc.setFill(Color.RED);
         gc.fillOval(centerI-5,centerJ-5,10,10);
+        gc.setFill(Color.RED);
+        gc.fillRect(i,j-5,widthImg,5);
+        gc.setFill(Color.GREEN);
+        gc.fillRect(i,j-5,(double)(widthImg)*this.health/Config.TANKER_HEALTH,5);
+
         gc.setFill(Color.BLACK);
+        gc.setStroke(Color.BLACK);
+        gc.strokeRect(i,j-5,widthImg,5);
     }
 }

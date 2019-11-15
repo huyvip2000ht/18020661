@@ -18,17 +18,17 @@ public class NormalEnemy extends AbtractEnemy {
       gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile291.png");
       baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile268.png") ;
 
-        i = x * Config.scale+32;
-        j = y * Config.scale+32;
+        i = x * Config.SCALE +32;
+        j = y * Config.SCALE +32;
 
 
         widthImg= (int) baseImg.getWidth();
         heightImg= (int) baseImg.getHeight();
-        centerI=x*Config.scale+32+widthImg/2;
-        centerJ=y*Config.scale+32+heightImg/2;
-        health = 5;
-        reward = 2;
-        speed = 5;
+        centerI=x*Config.SCALE +32+widthImg/2;
+        centerJ=y*Config.SCALE +32+heightImg/2;
+        health = Config.NORMAL_HEALTH;
+        reward = Config.NORMAL_REWARD;
+        speed = Config.NORMAL_SPEED;
         direction= Direction.UP;
 
     }
@@ -56,7 +56,13 @@ public class NormalEnemy extends AbtractEnemy {
         gc.fillOval(i-5, j-5,10, 10);
         gc.setFill(Color.RED);
         gc.fillOval(centerI-5,centerJ-5,10,10);
+        gc.setFill(Color.RED);
+        gc.fillRect(i,j-5,widthImg,5);
+        gc.setFill(Color.GREEN);
+        gc.fillRect(i,j-5,(double) (widthImg)*this.health/Config.NORMAL_HEALTH,5);
         gc.setFill(Color.BLACK);
+        gc.setStroke(Color.BLACK);
+        gc.strokeRect(i,j-5,widthImg,5);
 
      //   gc.drawImage(baseImg,i,j);
      //   gc.drawImage(gunImg,i,j);

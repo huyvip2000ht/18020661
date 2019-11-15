@@ -2,7 +2,6 @@ package main.sample.GameObject.OutgameObject;
 
 import javafx.scene.canvas.GraphicsContext;
 import main.sample.Config;
-import main.sample.GameObject.GameObject;
 
 public class Tick extends OutgameObject {
     public  int[] time={0};
@@ -12,8 +11,8 @@ public class Tick extends OutgameObject {
 
     public Tick(){
 
-        this.i= 13 * Config.scale;
-        this.j= 1  * Config.scale;
+        this.i= 13 * Config.SCALE;
+        this.j= 1  * Config.SCALE;
     }
 
     public void upTime(){
