@@ -11,17 +11,19 @@ import static main.sample.Main.spawner;
 
 public abstract class AbtractEnemy extends IngameObject {
 
+
+    int reward;
+    double speed;
+    Direction direction;
+
     public double health;
-    public int reward;
-    public double speed;
-    public Direction direction;
     public int widthImg;
     public int heightImg;
 
+    private int wayPointIndex = 0;
 
 
-  public int wayPointIndex = 0;
-  public Point getNextWayPoint() {
+  private Point getNextWayPoint() {
     if (wayPointIndex < Road.wayPoints.length - 1)
       return Road.wayPoints[++wayPointIndex];
     return null;
@@ -36,7 +38,7 @@ public abstract class AbtractEnemy extends IngameObject {
     return false;
   }
 
-  void calculateDirection(){
+  private void calculateDirection(){
     if (wayPointIndex >= Road.wayPoints.length-1) {
       // Enemy den way point cuoi
       Main.lives.setLives(Main.lives.getLives()-1);
@@ -60,21 +62,17 @@ public abstract class AbtractEnemy extends IngameObject {
     }
   }
 
+
+
+
   @Override
   public void update() {
 
-    /*    ListIterator<GameObject> listIterator=gameObjects.listIterator();
-        while (listIterator.hasNext()){
-            if(listIterator.next().getClass().getName()=="main.sample.GameObject.IngameObject.Tower.NormalTower"){
-                if(this.isInRange(listIterator.next().)) System.out.println();
-            }
-        }*/
+
     if(this.health<=0) {
       Main.reward.setReward(Main.reward.getReward()+this.reward);
       spawner.enemies.remove(this);
     }
-
-
 
 
     calculateDirection();

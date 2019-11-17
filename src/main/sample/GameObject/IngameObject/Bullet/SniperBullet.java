@@ -11,7 +11,7 @@ import main.sample.Config;
 import main.sample.GameObject.IngameObject.Tower.AbtractTower;
 
 public class SniperBullet extends AbtractBullet {
-    Image bulletImg;
+    private Image bulletImg;
 
     public SniperBullet(int i, int j, double angle, AbtractTower owner) {
         this.i = i;

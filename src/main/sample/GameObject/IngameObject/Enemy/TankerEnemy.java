@@ -9,7 +9,7 @@ import main.sample.Config;
 import main.sample.Direction;
 
 public class TankerEnemy extends AbtractEnemy {
-    Image image;
+    private Image image;
 
     public TankerEnemy(int x,int y){
         this.x=x;
@@ -36,10 +36,13 @@ public class TankerEnemy extends AbtractEnemy {
         imageView.setRotate(this.direction.getDegree());
         Image rotatedImage=imageView.snapshot(snapshotParameters,null);
         gc.drawImage(rotatedImage,i,j);
+      /*
         gc.setFill(Color.BLACK);
         gc.fillOval(i-5, j-5,10, 10);
         gc.setFill(Color.RED);
         gc.fillOval(centerI-5,centerJ-5,10,10);
+
+       */
         gc.setFill(Color.RED);
         gc.fillRect(i,j-5,widthImg,5);
         gc.setFill(Color.GREEN);

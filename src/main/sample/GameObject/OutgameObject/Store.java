@@ -7,6 +7,8 @@ import main.sample.Config;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import main.sample.GameObject.IngameObject.IngameObject;
+import main.sample.GameObject.IngameObject.Tower.AbtractTower;
 import main.sample.GameObject.IngameObject.Tower.MachineGunTower;
 import main.sample.GameObject.IngameObject.Tower.NormalTower;
 import main.sample.GameObject.IngameObject.Tower.SniperTower;
@@ -15,22 +17,29 @@ import main.sample.Map;
 
 public class Store extends OutgameObject {
 
-    public static Image normalTower;
-    public static Image machineGunTower;
-    public static Image sniperTower;
+    private  Image normalTower;
+    private Image machineGunTower;
+    private Image sniperTower;
+    private Image sell;
+
     public static ImageView normal;
     public static ImageView machineGun;
     public static ImageView sniper;
-    public boolean clickedNormal;
-    public boolean clickedMachineGun;
-    public boolean clickedSniper;
-    double orgSceneX, orgSceneY;
-    double orgTranslateX, orgTranslateY;
+    public static ImageView selling;
+
+    private boolean clickedNormal;
+    private boolean clickedMachineGun;
+    private boolean clickedSniper;
+    private boolean clickedSell;
+
+    private double orgSceneX, orgSceneY;
+    private double orgTranslateX, orgTranslateY;
 
     public Store(){
         normalTower=new Image("file:src/main/AssetsKit_2/Normal.png");
         machineGunTower=new Image("file:src/main/AssetsKit_2/MachineGun.png");
         sniperTower=new Image("file:src/main/AssetsKit_2/Sniper.png");
+        sell=new Image("file:src/main/AssetsKit_2/$.png");
 
         normal=new ImageView(normalTower);
         normal.setX(13* Config.SCALE);
@@ -44,9 +53,16 @@ public class Store extends OutgameObject {
         sniper.setX(13*Config.SCALE);
         sniper.setY(6*Config.SCALE);
 
+        selling=new ImageView(sell);
+        selling.setX(13*Config.SCALE);
+        selling.setY(7*Config.SCALE);
+
         clickedNormal=false;
         clickedMachineGun=false;
         clickedSniper=false;
+        clickedSell=false;
+
+
         normal.setOnMousePressed((new EventHandler<MouseEvent>() {
 
             public void handle(MouseEvent t) {
@@ -54,13 +70,14 @@ public class Store extends OutgameObject {
                     clickedNormal=true;
                     clickedMachineGun=false;
                     clickedSniper=false;
+                    clickedSell=false;
                 }
                 else clickedNormal=false;
             orgSceneX = t.getSceneX();
             orgSceneY = t.getSceneY();
             orgTranslateX = ((ImageView)(t.getSource())).getTranslateX();
             orgTranslateY = ((ImageView)(t.getSource())).getTranslateY();
-             //   System.out.println(t.getX()+" "+t.getY());
+
 
         }
         }));
@@ -85,11 +102,11 @@ public class Store extends OutgameObject {
                 int newY= (int) ((((ImageView)(mouseEvent.getSource())).getY()+((ImageView)(mouseEvent.getSource())).getTranslateY()+32)/Config.SCALE);
                 System.out.println(newX+" "+newY);
                 if(Map.map_block[newX][newY]==0 && Config.NORMAL_VALUE <=Main.reward.getReward()) {
-                    Map.map_block[newX][newY]=1;
+                    Map.map_block[newX][newY]=2;
                     Main.reward.setReward(Main.reward.getReward()-Config.NORMAL_VALUE);
                     Main.ingameObjects.add(new NormalTower(newX, newY));
                  //   Map.draw();
-                    System.out.println("placed");
+                  //  System.out.println("placed");
                 }
                 ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
@@ -104,6 +121,7 @@ public class Store extends OutgameObject {
                     clickedMachineGun=true;
                     clickedSniper=false;
                     clickedNormal=false;
+                    clickedSell=false;
                 }
                 else clickedMachineGun=false;
                 orgSceneX = t.getSceneX();
@@ -133,13 +151,13 @@ public class Store extends OutgameObject {
 
                 int newX= (int) ((((ImageView)(mouseEvent.getSource())).getX()+((ImageView)(mouseEvent.getSource())).getTranslateX()+32)/Config.SCALE);
                 int newY= (int) ((((ImageView)(mouseEvent.getSource())).getY()+((ImageView)(mouseEvent.getSource())).getTranslateY()+32)/Config.SCALE);
-                System.out.println(newX+" "+newY);
+               // System.out.println(newX+" "+newY);
                 if(Map.map_block[newX][newY]==0 && Config.MACHINE_GUN_VALUE <=Main.reward.getReward()) {
-                    Map.map_block[newX][newY]=1;
+                    Map.map_block[newX][newY]=2;
                     Main.reward.setReward(Main.reward.getReward()-Config.MACHINE_GUN_VALUE);
                     Main.ingameObjects.add(new MachineGunTower(newX, newY));
                     //   Map.draw();
-                    System.out.println("placed");
+                //    System.out.println("placed");
                 }
                 ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
@@ -152,6 +170,7 @@ public class Store extends OutgameObject {
                     clickedSniper=true;
                     clickedMachineGun=false;
                     clickedNormal=false;
+                    clickedSell=false;
 
                 }
                 else clickedSniper=false;
@@ -182,13 +201,62 @@ public class Store extends OutgameObject {
 
                 int newX= (int) ((((ImageView)(mouseEvent.getSource())).getX()+((ImageView)(mouseEvent.getSource())).getTranslateX()+32)/Config.SCALE);
                 int newY= (int) ((((ImageView)(mouseEvent.getSource())).getY()+((ImageView)(mouseEvent.getSource())).getTranslateY()+32)/Config.SCALE);
-                System.out.println(newX+" "+newY);
+             //   System.out.println(newX+" "+newY);
                 if(Map.map_block[newX][newY]==0 && Config.SNIPER_VALUE <=Main.reward.getReward()) {
-                    Map.map_block[newX][newY]=1;
+                    Map.map_block[newX][newY]=2;
                     Main.reward.setReward(Main.reward.getReward()- Config.SNIPER_VALUE);
                     Main.ingameObjects.add(new SniperTower(newX, newY));
                     //   Map.draw();
-                    System.out.println("placed");
+              //      System.out.println("placed");
+                }
+                ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
+                ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
+            }
+        }));
+        selling.setOnMousePressed((new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent t) {
+                if(!clickedSell){
+                    clickedSell=true;
+                    clickedSniper=false;
+                    clickedMachineGun=false;
+                    clickedNormal=false;
+
+                }
+                else clickedSell=false;
+                orgSceneX = t.getSceneX();
+                orgSceneY = t.getSceneY();
+                orgTranslateX = ((ImageView)(t.getSource())).getTranslateX();
+                orgTranslateY = ((ImageView)(t.getSource())).getTranslateY();
+            }
+        }));
+        selling.setOnMouseDragged((new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent t) {
+                double offsetX = t.getSceneX() - orgSceneX;
+                double offsetY = t.getSceneY() - orgSceneY;
+                double newTranslateX = orgTranslateX + offsetX;
+                double newTranslateY = orgTranslateY + offsetY;
+
+                ((ImageView)(t.getSource())).setTranslateX(newTranslateX);
+                ((ImageView)(t.getSource())).setTranslateY(newTranslateY);
+            }
+        }));
+        selling.setOnMouseReleased((new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                int newX= (int) ((((ImageView)(mouseEvent.getSource())).getX()+((ImageView)(mouseEvent.getSource())).getTranslateX()+32)/Config.SCALE);
+                int newY= (int) ((((ImageView)(mouseEvent.getSource())).getY()+((ImageView)(mouseEvent.getSource())).getTranslateY()+32)/Config.SCALE);
+             //   System.out.println(newX+" "+newY);
+                if(Map.map_block[newX][newY]==2){
+                    Map.map_block[newX][newY]=0;
+                    for(IngameObject a: Main.ingameObjects){
+                        if(a.x==newX&&a.y==newY){
+                            Main.reward.setReward(Main.reward.getReward()+((AbtractTower)a).value/3);
+                           Main.ingameObjects.remove(a);
+                           break;
+                        }
+                    }
                 }
                 ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
@@ -208,15 +276,19 @@ public class Store extends OutgameObject {
         gc.drawImage(normalTower,13* Config.SCALE,4* Config.SCALE);
         gc.drawImage(machineGunTower,13*Config.SCALE,5*Config.SCALE);
         gc.drawImage(sniperTower,13* Config.SCALE,6* Config.SCALE);
+        gc.drawImage(sell,13*Config.SCALE,7*Config.SCALE);
 
         gc.fillText("300$",14* Config.SCALE,4* Config.SCALE +32);
         gc.fillText("500$",14* Config.SCALE,5* Config.SCALE +32);
         gc.fillText("700$",14* Config.SCALE,6* Config.SCALE +32);
 
+        gc.fillText("Wave: "+Main.spawner.index,13* Config.SCALE,11* Config.SCALE);
+
         gc.setStroke(Color.BLACK);
         if(clickedNormal) gc.strokeRect(13*Config.SCALE,4*Config.SCALE,2*Config.SCALE,Config.SCALE);
         else if(clickedMachineGun) gc.strokeRect(13*Config.SCALE,5*Config.SCALE,2*Config.SCALE,Config.SCALE);
         else if(clickedSniper) gc.strokeRect(13*Config.SCALE,6*Config.SCALE,2*Config.SCALE,Config.SCALE);
+        else if(clickedSell) gc.strokeRect(13*Config.SCALE,7*Config.SCALE,Config.SCALE,Config.SCALE);
 
     }
 

@@ -15,7 +15,7 @@ import static main.sample.Main.ingameObjects;
 //import static main.sample.Main.gameObjects;
 
 public class NormalBullet extends AbtractBullet {
-    Image bulletImg;
+    private Image bulletImg;
 
     public NormalBullet(int i ,int j,double angle,AbtractTower owner){
         this.i=i;

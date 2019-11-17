@@ -5,10 +5,10 @@ import main.sample.Config;
 
 public class Reward extends OutgameObject {
 
-    public int reward;
+    private int reward;
 
-    public Reward(int reward){
-        this.reward=reward;
+    public Reward(){
+        this.reward=Config.REWARD;
 
         this.i=13* Config.SCALE;
         this.j=2*Config.SCALE;

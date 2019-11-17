@@ -4,10 +4,10 @@ import javafx.scene.canvas.GraphicsContext;
 import main.sample.Config;
 
 public class Tick extends OutgameObject {
-    public  int[] time={0};
-    public long second=System.currentTimeMillis();
-    public double fps;
-    public int a;
+    private int[] time={0};
+    private long second=System.currentTimeMillis();
+    private double fps;
+    private int a;
 
     public Tick(){
 

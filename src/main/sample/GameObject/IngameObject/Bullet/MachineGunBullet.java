@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class MachineGunBullet extends AbtractBullet {
 
-    Image bulletImg;
+    private Image bulletImg;
 
     public MachineGunBullet(int i , int j, double angle, AbtractTower owner){
         this.i=i;

@@ -9,8 +9,8 @@ import javafx.scene.image.Image;
 
 public class NormalEnemy extends AbtractEnemy {
 
-    Image gunImg;
-    Image baseImg;
+    private Image gunImg;
+    private Image baseImg;
 
   public NormalEnemy(int x,int y){
         this.x=x;
@@ -51,13 +51,17 @@ public class NormalEnemy extends AbtractEnemy {
 
         gc.drawImage(base,i,j);
         gc.drawImage(gun,i,j);
-
+/*
         gc.setFill(Color.BLACK);
         gc.fillOval(i-5, j-5,10, 10);
         gc.setFill(Color.RED);
         gc.fillOval(centerI-5,centerJ-5,10,10);
+
+ */
         gc.setFill(Color.RED);
         gc.fillRect(i,j-5,widthImg,5);
+
+
         gc.setFill(Color.GREEN);
         gc.fillRect(i,j-5,(double) (widthImg)*this.health/Config.NORMAL_HEALTH,5);
         gc.setFill(Color.BLACK);

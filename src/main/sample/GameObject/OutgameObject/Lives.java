@@ -14,7 +14,7 @@ import java.util.List;
 import static main.sample.Main.*;
 
 public class Lives extends OutgameObject {
-    public int lives;
+    private int lives;
     public Lives(int lives){
         this.lives=lives;
 
@@ -41,14 +41,11 @@ public class Lives extends OutgameObject {
         gc.fillText(toString(),i,j);
         if(lives<=0) {
 
-          //  Main.timer.stop();
+            ImageView gameover=new ImageView(new Image("file:src/main/AssetsKit_2/Gameover.jpg"));
+            gameover.setFitWidth(16*Config.SCALE);
+            gameover.setFitHeight(12*Config.SCALE);
+            root.getChildren().add(gameover);
 
-         //   Main.outgameObjects.clear();
-            ImageView a=new ImageView(new Image("file:src/main/AssetsKit_2/Gameover.jpg"));
-            a.setFitWidth(16*Config.SCALE);
-            a.setFitHeight(12*Config.SCALE);
-            root.getChildren().add(a);
-           // gc.drawImage(new Image("file:src/main/AssetsKit_2/Gameover.jpg"),0,0,16*Config.SCALE,12*Config.SCALE);
         }
     }
 

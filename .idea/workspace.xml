@@ -3,24 +3,52 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/Menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/Menu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/PlayButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/AssetsKit_2/PlayButton.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Angle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Angle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/AbtractBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/AbtractBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/MachineGunBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/MachineGunBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/NormalBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/NormalBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/SniperBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Bullet/SniperBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/AbtractEnemy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/AbtractEnemy$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/AbtractEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/AbtractEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/SmallerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Enemy/TankerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Spawner/Spawner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Spawner/Spawner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/AbtractTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/AbtractTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/MachineGunTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/NormalTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/IngameObject/Tower/SniperTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Lives.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Lives.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Reward.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Reward.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Tick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/GameObject/OutgameObject/Tick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Levels.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/18020661/main/sample/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile268.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile268.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile269.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile269.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile291.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile291.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile292.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/PNG/Default size/towerDefense_tile292.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Menu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/18020661/main/sample/Shopping.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/Menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/Menu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AssetsKit_2/PlayButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetsKit_2/PlayButton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kenney_topdowntanksredux/PNG/Default size/tank_bigRed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kenney_topdowntanksredux/PNG/Default size/tank_bigRed.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/Angle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Angle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/AbtractBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/AbtractBullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/MachineGunBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/MachineGunBullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Bullet/NormalBullet.java" afterDir="false" />
@@ -35,13 +63,15 @@
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/MachineGunTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/MachineGunTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/NormalTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/IngameObject/Tower/SniperTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Info.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Lives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Lives.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Reward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Reward.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Store.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/GameObject/OutgameObject/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Levels.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample/Road.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample/Shopping.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,11 +157,12 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/18020661-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -305,11 +336,12 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1573963422804" duration="356000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1302000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

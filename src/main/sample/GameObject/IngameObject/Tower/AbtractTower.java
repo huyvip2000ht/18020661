@@ -20,10 +20,11 @@ public abstract class AbtractTower extends IngameObject {
     double fireRange;
     double angle;
     double timeShot;
+    public int value;
 
     public List<AbtractBullet> bullets=new ArrayList<>();
 
-   public boolean haveTarget(AbtractEnemy enemy){
+   boolean haveTarget(AbtractEnemy enemy){
        if(Point.distance(this.centerI,this.centerJ,enemy.centerI,enemy.centerJ)
                <=this.fireRange* Config.SCALE){
            return true;
@@ -36,20 +37,14 @@ public abstract class AbtractTower extends IngameObject {
     public void update(){
        for(AbtractEnemy a: spawner.enemies){
 
-        /*   if(     a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.NormalEnemy"||
-                   a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.SmallerEnemy"||
-                   a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.BossEnemy"||
-                   a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.TankerEnemy"){
-          */
                if(this.haveTarget(a)){
-                   this.angle= Angle.degree(this.centerI,this.centerJ,((AbtractEnemy) a).centerI,((AbtractEnemy) a).centerJ);
+                   this.angle= Angle.degree(this.centerI,this.centerJ, a.centerI, a.centerJ);
                    if(tick.getTime()>=timeShot+fireRate) {
                        bullets.add(new NormalBullet(this.i, this.j,this.angle,this));
                        timeShot=tick.getTime();
 
                    }
                    break;
-        //       }
            }
        }
        bullets.forEach(AbtractBullet::update);

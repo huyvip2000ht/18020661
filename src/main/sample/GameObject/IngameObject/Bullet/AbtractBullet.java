@@ -12,11 +12,11 @@ import static main.sample.Main.spawner;
 
 public abstract class AbtractBullet extends IngameObject {
 
-    public double speed;
+    double speed;
 
-    public double damage;
-    public double angle;
-    public AbtractTower owner;
+    double damage;
+    double angle;
+    AbtractTower owner;
 
     public boolean isInHitbox(AbtractEnemy enemy){
         if(centerI<=enemy.i+enemy.widthImg && centerI>=enemy.i
@@ -26,8 +26,7 @@ public abstract class AbtractBullet extends IngameObject {
         return false;
     }
     public boolean isOutRange(){
-        if(Point.distance(i,j,owner.i,owner.j)+speed>=owner.getFireRange()* Config.SCALE) return true;
-        return false;
+        return Point.distance(i, j, owner.i, owner.j) + speed >= owner.getFireRange() * Config.SCALE;
     }
 
     @Override

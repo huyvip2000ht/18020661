@@ -26,7 +26,7 @@ public class NormalTower extends AbtractTower {
         fireRange = Config.NORMAL_GUN_FIRE_RANGE;
         this.timeShot=0;
         this.angle=0;
-     //   value=300;
+        value=300;
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
     }
@@ -49,11 +49,7 @@ public class NormalTower extends AbtractTower {
         gc.drawImage(baseImg,i,j);
         gc.drawImage(gun,i,j);
 
-        gc.setFill(Color.BLACK);
-        gc.fillOval(i-5, j-5,10, 10);
-        gc.setFill(Color.RED);
-        gc.fillOval(centerI-5,centerJ-5,10,10);
-        gc.setFill(Color.BLACK);
+
     }
 
 }

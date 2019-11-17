@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class BossEnemy extends AbtractEnemy{
-    Image image;
+    private Image image;
     public BossEnemy(int x,int y){
         this.x=x;
         this.y=y;
@@ -39,11 +39,11 @@ public class BossEnemy extends AbtractEnemy{
         imageView.setRotate(this.direction.getDegree());
         Image rotatedImage=imageView.snapshot(snapshotParameters,null);
         gc.drawImage(rotatedImage,i,j);
-        gc.setFill(Color.BLACK);
+   /*     gc.setFill(Color.BLACK);
         gc.fillOval(i-5, j-5,10, 10);
         gc.setFill(Color.RED);
         gc.fillOval(centerI-5,centerJ-5,10,10);
-
+*/
 
         gc.setFill(Color.RED);
         gc.fillRect(i,j-5,widthImg,5);

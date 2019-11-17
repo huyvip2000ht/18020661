@@ -1,6 +1,7 @@
 package main.sample.GameObject.IngameObject.Spawner;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 import main.sample.Config;
 import main.sample.GameObject.IngameObject.Enemy.*;
 import main.sample.GameObject.IngameObject.IngameObject;
@@ -13,21 +14,24 @@ import static main.sample.Main.*;
 
 public class Spawner extends IngameObject {
 
-    int delayTime;
-    int timeCreated;
-    int numberofEnemy;
-    String enemyClass;
+    private int delayTime;
+    public int timeCreated;
+    private int numberofEnemy;
+
+
 
     public List<AbtractEnemy> enemies = new ArrayList<>();
-    int index=1;
-    int subindex;
-    boolean check;
 
-    public Spawner(int delayTime, int timeCreated, int numberofEnemy) {
-        this.delayTime = delayTime;
+
+    public int index=1;
+    private boolean check;
+
+
+    public Spawner() {
+     /*   this.delayTime = delayTime;
         this.timeCreated = timeCreated;
-        this.numberofEnemy = numberofEnemy;
-        this.enemyClass = enemyClass;
+        this.numberofEnemy = numberofEnemy;*/
+
         this.x = 2;
         this.y = 12;
         this.i = x * Config.SCALE;
@@ -38,9 +42,10 @@ public class Spawner extends IngameObject {
     @Override
     public void render(GraphicsContext gc) {
         enemies.forEach(g -> g.render(gc));
+
     }
 
-    void LV(int level) {
+    private void LV(int level) {
         if (level == 1) {
             numberofEnemy = 7;
             timeCreated = 30;
@@ -106,17 +111,14 @@ public class Spawner extends IngameObject {
     @Override
     public void update() {
         LV(index);
-      //  System.out.println(enemies.isEmpty());
-    //    System.out.println(index);
-    //    System.out.println(tick.getTime());
-   //     System.out.println();
+
         if(enemies.isEmpty()&&tick.getTime()>=timeCreated){
             timeCreated=tick.getTime()+1;
-            index++;
+         //   index++;
 
         }
 
-
+        enemies.forEach(AbtractEnemy::update);
 
          /*   for (int n = 0; n < numberofEnemy; n++) {
                 if(tick.getTime()==timeCreated + delayTime * n) {
@@ -134,6 +136,6 @@ public class Spawner extends IngameObject {
             }*/
 
 
-        enemies.forEach(AbtractEnemy::update);
+
     }
 }

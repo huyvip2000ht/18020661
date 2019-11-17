@@ -31,15 +31,16 @@ public class Main extends Application {
     //  public static List<NormalTower>
     public static Tick tick = new Tick();
     public static AnimationTimer timer;
-    public static Reward reward = new Reward(Config.REWARD);
+    public static Reward reward = new Reward();
     public static Lives lives = new Lives(Config.LIVES);
     public static Store store = new Store();
+    public static NextWaveButton nextWaveButton=new NextWaveButton();
     public static Group root = new Group();
     public static Scene scene = new Scene(root);
     public static List<IngameObject> ingameObjects = new ArrayList<>();
     public static List<OutgameObject> outgameObjects = new ArrayList<>();
-    public static Spawner spawner = new Spawner(10, 10, 100);
-    public static Levels levels = new Levels();
+    public static Spawner spawner = new Spawner();
+
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -94,6 +95,8 @@ public class Main extends Application {
                 root.getChildren().add(Store.normal);
                 root.getChildren().add(Store.machineGun);
                 root.getChildren().add(Store.sniper);
+                root.getChildren().add(Store.selling);
+                root.getChildren().add(NextWaveButton.imageView);
 
                 timer = new AnimationTimer() {
                     @Override
@@ -116,9 +119,7 @@ public class Main extends Application {
         });
         outgameObjects.add(tick);
         outgameObjects.add(reward);
-
         outgameObjects.add(store);
-
         ingameObjects.add(spawner);
         Map.autoDrawMap();
         outgameObjects.add(lives);
@@ -140,9 +141,9 @@ public class Main extends Application {
 
         //  Map.autoDrawMap();
         //   System.out.println();
-
+    //    Map.draw();
         Map.drawMapIn(gc);
-        Road.drawPoints(gc);
+     //   Road.drawPoints(gc);
         ingameObjects.forEach(g -> g.render(gc));
         Map.drawMapOut(gc);
         outgameObjects.forEach(g -> g.render(gc));

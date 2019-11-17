@@ -33,18 +33,13 @@ public class SniperTower extends AbtractTower {
         fireRange = Config.SNIPER_GUN_FIRE_RANGE;
         this.timeShot=0;
         this.angle=0;
-     //   value=700;
+        value=700;
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile204.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
     }
 
     public void update(){
         for(AbtractEnemy a:spawner.enemies){
-
-            if(     a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.NormalEnemy"||
-                    a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.SmallerEnemy"||
-                    a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.BossEnemy"||
-                    a.getClass().getName()=="main.sample.GameObject.IngameObject.Enemy.TankerEnemy"){
                 if(this.haveTarget((AbtractEnemy)a)){
                     this.angle= Angle.degree(this.centerI,this.centerJ,((AbtractEnemy) a).centerI,((AbtractEnemy) a).centerJ);
                     if(tick.getTime()>=timeShot+fireRate) {
@@ -53,7 +48,6 @@ public class SniperTower extends AbtractTower {
 
                     }
                     break;
-                }
             }
         }
         bullets.forEach(AbtractBullet::update);

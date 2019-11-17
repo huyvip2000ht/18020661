@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 public interface GameObject {
 
 
-    public abstract void render(GraphicsContext gc);
-    public abstract void update();
+    void render(GraphicsContext gc);
+    void update();
 
 }
