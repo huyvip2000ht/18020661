@@ -5,6 +5,7 @@ import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 import main.sample.Angle;
@@ -13,6 +14,7 @@ import main.sample.GameObject.IngameObject.Bullet.AbtractBullet;
 import main.sample.GameObject.IngameObject.Bullet.SniperBullet;
 import main.sample.GameObject.IngameObject.Enemy.AbtractEnemy;
 import main.sample.GameObject.IngameObject.IngameObject;
+import main.sample.SoundTrack;
 
 import static main.sample.Main.*;
 
@@ -45,7 +47,9 @@ public class SniperTower extends AbtractTower {
                     if(tick.getTime()>=timeShot+fireRate) {
                         bullets.add(new SniperBullet(this.i, this.j,this.angle,this));
                         timeShot=tick.getTime();
-
+                        MediaPlayer x=new MediaPlayer(SoundTrack.towerShotMedia);
+                        x.setVolume(0.5);
+                        x.play();
                     }
                     break;
             }

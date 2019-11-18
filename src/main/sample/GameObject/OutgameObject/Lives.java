@@ -3,11 +3,13 @@ package main.sample.GameObject.OutgameObject;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import main.sample.Config;
 import main.sample.Main;
+import main.sample.SoundTrack;
 
 import java.util.List;
 
@@ -44,6 +46,11 @@ public class Lives extends OutgameObject {
             ImageView gameover=new ImageView(new Image("file:src/main/AssetsKit_2/Gameover.jpg"));
             gameover.setFitWidth(16*Config.SCALE);
             gameover.setFitHeight(12*Config.SCALE);
+
+            timer.stop();
+            SoundTrack.backgroundMediaPlayer.stop();
+            SoundTrack.gameOverMediaPlayer.play();
+
             root.getChildren().add(gameover);
 
         }

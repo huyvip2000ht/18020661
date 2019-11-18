@@ -114,7 +114,7 @@ public class Spawner extends IngameObject {
 
         if(enemies.isEmpty()&&tick.getTime()>=timeCreated){
             timeCreated=tick.getTime()+1;
-         //   index++;
+            index++;
 
         }
 

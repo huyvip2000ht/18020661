@@ -26,6 +26,7 @@ public class NextWaveButton extends OutgameObject {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 check=!check;
+
                 Main.spawner.index++;
 
                 Main.spawner.timeCreated=Main.tick.getTime()+1;

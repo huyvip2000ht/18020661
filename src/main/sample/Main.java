@@ -40,7 +40,7 @@ public class Main extends Application {
     public static List<IngameObject> ingameObjects = new ArrayList<>();
     public static List<OutgameObject> outgameObjects = new ArrayList<>();
     public static Spawner spawner = new Spawner();
-
+    public static SoundTrack soundTrack=new SoundTrack();
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -117,22 +117,27 @@ public class Main extends Application {
 
             }
         });
+        Map.autoDrawMap();
         outgameObjects.add(tick);
         outgameObjects.add(reward);
         outgameObjects.add(store);
-        ingameObjects.add(spawner);
-        Map.autoDrawMap();
         outgameObjects.add(lives);
+
+        ingameObjects.add(spawner);
+
         root.getChildren().add(button);
+
+        SoundTrack.backgroundMediaPlayer.play();
+
 
         stage.setScene(scene);
         stage.show();
     }
 
     public static void update() {
-
-        outgameObjects.forEach(OutgameObject::update);
         ingameObjects.forEach(IngameObject::update);
+        outgameObjects.forEach(OutgameObject::update);
+
 
 
     }

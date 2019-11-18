@@ -2,8 +2,10 @@ package main.sample.GameObject.IngameObject.Bullet;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.media.MediaPlayer;
 import main.sample.Config;
 import main.sample.GameObject.IngameObject.Tower.AbtractTower;
+import main.sample.SoundTrack;
 
 import java.util.Random;
 
@@ -19,6 +21,8 @@ public class MachineGunBullet extends AbtractBullet {
         centerJ=j+32;
 
         this.owner=owner;
+
+
 
         damage= Config.MACHINE_GUN_DAMAGE;
         speed=Config.MACHINE_GUN_SPEED;

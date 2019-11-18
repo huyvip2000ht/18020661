@@ -1,5 +1,6 @@
 package main.sample.GameObject.IngameObject.Enemy;
 
+import javafx.scene.media.MediaPlayer;
 import main.sample.*;
 import main.sample.Road;
 import main.sample.GameObject.IngameObject.IngameObject;
@@ -42,7 +43,8 @@ public abstract class AbtractEnemy extends IngameObject {
     if (wayPointIndex >= Road.wayPoints.length-1) {
       // Enemy den way point cuoi
       Main.lives.setLives(Main.lives.getLives()-1);
-
+      MediaPlayer a=new MediaPlayer(SoundTrack.enemyThroughMedia);
+      a.play();
       spawner.enemies.remove(this);
 
     }

@@ -1,5 +1,6 @@
 package main.sample.GameObject.IngameObject.Tower;
 
+import javafx.scene.media.MediaPlayer;
 import main.sample.*;
 import main.sample.GameObject.IngameObject.Bullet.AbtractBullet;
 import main.sample.GameObject.IngameObject.Enemy.AbtractEnemy;
@@ -41,7 +42,12 @@ public abstract class AbtractTower extends IngameObject {
                    this.angle= Angle.degree(this.centerI,this.centerJ, a.centerI, a.centerJ);
                    if(tick.getTime()>=timeShot+fireRate) {
                        bullets.add(new NormalBullet(this.i, this.j,this.angle,this));
+
                        timeShot=tick.getTime();
+
+                       MediaPlayer x=new MediaPlayer(SoundTrack.towerShotMedia);
+                       x.setVolume(0.5);
+                       x.play();
 
                    }
                    break;
