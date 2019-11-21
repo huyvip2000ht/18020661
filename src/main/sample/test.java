@@ -1,59 +1,64 @@
 package main.sample;
-
-
-
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
-import java.io.File;
+public class test extends Application{
+    private Timeline t;
+    private int xSpeed = 2;
 
-/**
- * @web http://java-buddy.blogspot.com/
- */
-public class test extends Application {
+    public static void main(String[] args){
+        Application.launch(args);
+    }
+    public void start(Stage first){
+        Group root = new Group();
+        Scene field = new Scene(root, 500, 500);
+        field.setFill(Color.GREY);
 
-    @Override
-    public void start(Stage primaryStage) {
+        Circle ball = new Circle(20);
+        ball.setFill(Color.RED);
+        ball.setCenterX(field.getHeight()/2);
+        ball.setCenterY(field.getWidth()/2);
 
-        String musicFile="BackGround.wav";
+        Button btnStart=new Button("Start"), btnPause = new Button("Pause");
+        btnPause.setLayoutX(50);
 
-       // Media pick = new Media(new File(musicFile).toURI().toString());
+        root.getChildren().addAll(ball,btnStart,btnPause);
 
-        Media pick=new Media( new File(musicFile).toURI().toString());
-        MediaPlayer player = new MediaPlayer(pick);
-        player.play();
-
-        // Add a mediaView, to display the media. Its necessary !
-        // This mediaView is added to a Pane
-        MediaView mediaView = new MediaView(player);
-
-        // Add to scene
-   //     Group root = new Group(mediaView);
-    //    Scene scene = new Scene(root, 500, 200);
-
-        // Show the stage
-     //   primaryStage.setTitle("Media Player");
-    //    primaryStage.setScene(scene);
-   //     primaryStage.show();
-
-        // Play the media once the stage is shown
-
-
+        first.setScene(field);
+        first.show();
+        pauseGame(btnPause,ball);
+        startGame(btnStart,ball);
+        KeyFrame k = new KeyFrame(Duration.millis(10), e ->{
+            moveBall(ball);
+        });
+        t = new Timeline(k);
+        t.setCycleCount(Timeline.INDEFINITE);
     }
 
-    public static void main(String[] args) {
-        launch(args);
+    private void moveBall(Circle ball){
+        ball.setCenterX(ball.getCenterX()+xSpeed);
+        if(ball.getCenterX()>=500||ball.getCenterX()<=0){
+            xSpeed=-xSpeed;
+        }
+    }
+
+    private void startGame(Button start, Circle ball){
+        start.setOnAction(e->{
+            t.play();
+        });
+    }
+
+    private void pauseGame(Button pause, Circle ball){
+        pause.setOnAction(e->{
+            t.pause();
+        });
     }
 }

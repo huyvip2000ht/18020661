@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class MachineGunBullet extends AbtractBullet {
 
-    private Image bulletImg;
+
 
     public MachineGunBullet(int i , int j, double angle, AbtractTower owner){
         this.i=i;
@@ -32,8 +32,4 @@ public class MachineGunBullet extends AbtractBullet {
         bulletImg=new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile275.png") ;
     }
 
-    @Override
-    public void render(GraphicsContext gc) {
-        gc.drawImage(bulletImg,i,j);
-    }
 }

@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -40,6 +41,7 @@ public class Lives extends OutgameObject {
     @Override
     public void render(GraphicsContext gc) {
         gc.setFont(Font.font("Abyssinica SIL", FontWeight.BOLD, FontPosture.REGULAR,25));
+        gc.setFill(Color.BLACK);
         gc.fillText(toString(),i,j);
         if(lives<=0) {
 

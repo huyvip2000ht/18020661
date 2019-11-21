@@ -17,7 +17,7 @@ import static main.sample.Main.ingameObjects;
 //import static main.sample.Main.gameObjects;
 
 public class NormalBullet extends AbtractBullet {
-    private Image bulletImg;
+
 
     public NormalBullet(int i ,int j,double angle,AbtractTower owner){
         this.i=i;
@@ -36,17 +36,5 @@ public class NormalBullet extends AbtractBullet {
 
         bulletImg=new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile272.png") ;
     }
-
-    @Override
-    public void render(GraphicsContext gc) {
-        gc.drawImage(bulletImg,i,j);
-    }
-
-
-
-
-
-
-
 
 }

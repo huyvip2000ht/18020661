@@ -1,6 +1,7 @@
 package main.sample.GameObject.OutgameObject;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 import main.sample.Config;
 
 public class Tick extends OutgameObject {
@@ -30,6 +31,7 @@ public class Tick extends OutgameObject {
 
     @Override
     public void render(GraphicsContext gc) {
+        gc.setFill(Color.BLACK);
      gc.fillText("FPS: "+String.valueOf(fps),i,j);
     }
 

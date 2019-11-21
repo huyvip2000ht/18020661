@@ -11,24 +11,20 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
+import javafx.scene.input.MouseEvent;
 import main.sample.GameObject.IngameObject.IngameObject;
 import main.sample.GameObject.IngameObject.Spawner.Spawner;
 import main.sample.GameObject.OutgameObject.*;
-
+import javafx.event.EventHandler;
 import java.util.*;
 
 
 public class Main extends Application {
 
 
-    //  final public Scale srink=new Scale(0.5,0.5);
     public static GraphicsContext gc;
-    //   public static List<GameObject> gameObjects = new ArrayList<>();
-    // public static List<Spawner> spawners=new ArrayList<>();
-    //   public static List<AbtractBullet> bullets=new ArrayList<>();
-    //  public static List<NormalTower>
     public static Tick tick = new Tick();
     public static AnimationTimer timer;
     public static Reward reward = new Reward();
@@ -40,7 +36,7 @@ public class Main extends Application {
     public static List<IngameObject> ingameObjects = new ArrayList<>();
     public static List<OutgameObject> outgameObjects = new ArrayList<>();
     public static Spawner spawner = new Spawner();
-    public static SoundTrack soundTrack=new SoundTrack();
+
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -56,42 +52,22 @@ public class Main extends Application {
 
         root.getChildren().add(canvas);
 
-        // Tao scene
-        //      Scene scene = new Scene(root);
-
-
-
-/*
-        Group root1 = new Group();
-        root1.getChildren().add(canvas);
-        Scene scene1=new Scene(root1);
-*/
 
 
         stage.setTitle("main.sample.GameEntity.Tower Defense");
         stage.setResizable(false);
 
 
-        Image image_button = new Image("file:src/main/AssetsKit_2/PlayButton.png");
-        ImageView imageView_button = new ImageView(image_button);
-
-        Image image_menu = new Image("file:src/main/AssetsKit_2/Menu.png");
-        ImageView imageView_menu = new ImageView(image_menu);
-        imageView_menu.setFitHeight(Config.HEIGHT * Config.SCALE);
-        imageView_menu.setFitWidth(Config.WIDTH * Config.SCALE);
-        root.getChildren().add(imageView_menu);
+        Menu menu=new Menu();
+        menu.add();
 
 
-        Button button = new Button("", imageView_button);
-        button.setWrapText(true);
-        button.setTranslateX(Config.WIDTH * Config.SCALE / 2 - 192 / 2);
-        button.setTranslateY(Config.HEIGHT * Config.SCALE / 2 - 128 / 2);
 
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
+        menu.imageView_button.setOnMousePressed((new EventHandler<MouseEvent>() {
 
-                root.getChildren().removeAll(imageView_menu, button);
+            public void handle(MouseEvent actionEvent) {
+
+                root.getChildren().removeAll(menu.imageView_menu, menu.imageView_button);
                 root.getChildren().add(Store.normal);
                 root.getChildren().add(Store.machineGun);
                 root.getChildren().add(Store.sniper);
@@ -105,8 +81,8 @@ public class Main extends Application {
                             render();
 
                             update();
-                        } catch (ConcurrentModificationException e) {
                         }
+                        catch (ConcurrentModificationException e) {}
 
 
                     }
@@ -116,7 +92,7 @@ public class Main extends Application {
                 timer.start();
 
             }
-        });
+        }));
         Map.autoDrawMap();
         outgameObjects.add(tick);
         outgameObjects.add(reward);
@@ -125,7 +101,7 @@ public class Main extends Application {
 
         ingameObjects.add(spawner);
 
-        root.getChildren().add(button);
+
 
         SoundTrack.backgroundMediaPlayer.play();
 

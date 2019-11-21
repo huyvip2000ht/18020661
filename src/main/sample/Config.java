@@ -11,7 +11,7 @@ public class Config {
     static final public int RIGHT=90;
     static final public int DOWN=180;
     static final public int LEFT=270;
-    static final public int LIVES=1;
+    static final public int LIVES=20;
     static final public int REWARD=3000;
 
     static final public double MACHINE_GUN_DAMAGE=1;

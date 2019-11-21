@@ -106,35 +106,25 @@ public class Spawner extends IngameObject {
             }
         }
     }
+    public boolean isHappening(){
+        return !enemies.isEmpty();
+    }
+    public void updateTime(){
+        timeCreated=tick.getTime()+1;
+    }
 
 
     @Override
     public void update() {
         LV(index);
 
-        if(enemies.isEmpty()&&tick.getTime()>=timeCreated){
+    /*    if(enemies.isEmpty()&&tick.getTime()>=timeCreated){
             timeCreated=tick.getTime()+1;
-            index++;
+        //    index++;
 
-        }
+        }*/
 
         enemies.forEach(AbtractEnemy::update);
-
-         /*   for (int n = 0; n < numberofEnemy; n++) {
-                if(tick.getTime()==timeCreated + delayTime * n) {
-
-                    if(enemyClass==Config.SMALLER_ENEMY_CLASS)
-                        enemies.add(new SmallerEnemy(2,12));
-                    else if(enemyClass==Config.NORMAL_ENEMY_CLASS)
-                        enemies.add(new NormalEnemy(2,12));
-                    else if(enemyClass==Config.TANKER_ENEMY_CLASS)
-                        enemies.add(new TankerEnemy(2,12));
-                    else if(enemyClass==Config.BOSS_ENEMY_CLASS)
-                        enemies.add(new BossEnemy(2,12));
-
-                }
-            }*/
-
 
 
     }

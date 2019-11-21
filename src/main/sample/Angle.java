@@ -13,6 +13,40 @@ public class Angle {
             return 360-okok;
 
         }
+        public static double transX(double angle){
+            if(angle<=90)   {
+                return Math.sin(angle/180*Math.PI);
+
+            }
+            else if(angle<=180){
+                return Math.cos((angle-90)/180*Math.PI);
+
+            }
+            else if(angle<=270){
+                return Math.sin((angle-180)/180*Math.PI);
+
+            }
+
+                return Math.cos((angle-270)/180*Math.PI);
+        }
+        public static double transY(double angle){
+            if(angle<=90)   {
+
+                return Math.cos(angle/180*Math.PI);
+            }
+            else if(angle<=180){
+
+                return Math.sin((angle-90)/180*Math.PI);
+            }
+            else if(angle<=270){
+
+                return Math.cos((angle-180)/180*Math.PI);
+            }
+            else{
+
+                return Math.sin((angle-270)/180*Math.PI);
+            }
+        }
 
 
 }

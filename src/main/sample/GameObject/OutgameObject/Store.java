@@ -100,7 +100,7 @@ public class Store extends OutgameObject {
 
                 int newX= (int) ((((ImageView)(mouseEvent.getSource())).getX()+((ImageView)(mouseEvent.getSource())).getTranslateX()+32)/Config.SCALE);
                 int newY= (int) ((((ImageView)(mouseEvent.getSource())).getY()+((ImageView)(mouseEvent.getSource())).getTranslateY()+32)/Config.SCALE);
-                System.out.println(newX+" "+newY);
+
                 if(Map.map_block[newX][newY]==0 && Config.NORMAL_VALUE <=Main.reward.getReward()) {
                     Map.map_block[newX][newY]=2;
                     Main.reward.setReward(Main.reward.getReward()-Config.NORMAL_VALUE);
@@ -128,7 +128,7 @@ public class Store extends OutgameObject {
                 orgSceneY = t.getSceneY();
                 orgTranslateX = ((ImageView)(t.getSource())).getTranslateX();
                 orgTranslateY = ((ImageView)(t.getSource())).getTranslateY();
-             //   System.out.println(t.getX()+" "+t.getY());
+
 
             }
         }));
@@ -151,13 +151,12 @@ public class Store extends OutgameObject {
 
                 int newX= (int) ((((ImageView)(mouseEvent.getSource())).getX()+((ImageView)(mouseEvent.getSource())).getTranslateX()+32)/Config.SCALE);
                 int newY= (int) ((((ImageView)(mouseEvent.getSource())).getY()+((ImageView)(mouseEvent.getSource())).getTranslateY()+32)/Config.SCALE);
-               // System.out.println(newX+" "+newY);
+
                 if(Map.map_block[newX][newY]==0 && Config.MACHINE_GUN_VALUE <=Main.reward.getReward()) {
                     Map.map_block[newX][newY]=2;
                     Main.reward.setReward(Main.reward.getReward()-Config.MACHINE_GUN_VALUE);
                     Main.ingameObjects.add(new MachineGunTower(newX, newY));
-                    //   Map.draw();
-                //    System.out.println("placed");
+
                 }
                 ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
@@ -179,7 +178,6 @@ public class Store extends OutgameObject {
                 orgTranslateX = ((ImageView)(t.getSource())).getTranslateX();
                 orgTranslateY = ((ImageView)(t.getSource())).getTranslateY();
 
-            //    System.out.println(event.getX()+" "+event.getY());
 
             }
         }));
@@ -278,6 +276,7 @@ public class Store extends OutgameObject {
         gc.drawImage(sniperTower,13* Config.SCALE,6* Config.SCALE);
         gc.drawImage(sell,13*Config.SCALE,7*Config.SCALE);
 
+        gc.setFill(Color.BLACK);
         gc.fillText("300$",14* Config.SCALE,4* Config.SCALE +32);
         gc.fillText("500$",14* Config.SCALE,5* Config.SCALE +32);
         gc.fillText("700$",14* Config.SCALE,6* Config.SCALE +32);

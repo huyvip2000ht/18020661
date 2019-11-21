@@ -15,10 +15,12 @@ public class NextWaveButton extends OutgameObject {
 
     private Image image;
     public static ImageView imageView;
+    public Image image_ready;
     private boolean check=false;
 
     public NextWaveButton(){
         image=new Image("file:src/main/AssetsKit_2/NextWaveButton.png");
+        image_ready=new Image("file:src/main/AssetsKit_2/NextWaveButton_ready.png");
         imageView=new ImageView(image);
         imageView.setX(13* Config.SCALE);
         imageView.setY(9*Config.SCALE);
@@ -26,18 +28,33 @@ public class NextWaveButton extends OutgameObject {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 check=!check;
+                if(Main.spawner.isHappening());
+                else {
+                    Main.spawner.index++;
+                    Main.spawner.updateTime();
+                }
 
-                Main.spawner.index++;
-
-                Main.spawner.timeCreated=Main.tick.getTime()+1;
             }
         }));
+        imageView.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                imageView.setImage(image_ready);
+
+            }
+        });
+        imageView.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                imageView.setImage(image);
+            }
+        });
 
     }
 
     @Override
     public void render(GraphicsContext gc) {
-        gc.drawImage(image,13*Config.SCALE,9*Config.SCALE,Config.SCALE,Config.SCALE);
+       // gc.drawImage(image,13*Config.SCALE,9*Config.SCALE,Config.SCALE,Config.SCALE);
 
     }
 

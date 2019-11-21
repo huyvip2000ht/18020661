@@ -1,11 +1,15 @@
 package main.sample.GameObject.IngameObject.Bullet;
 
+import javafx.scene.canvas.GraphicsContext;
+import main.sample.Angle;
 import main.sample.Config;
 import main.sample.GameObject.IngameObject.Enemy.AbtractEnemy;
 import main.sample.GameObject.IngameObject.IngameObject;
 import main.sample.GameObject.IngameObject.Tower.AbtractTower;
 import main.sample.Main;
 import main.sample.Point;
+import javafx.scene.image.Image;
+import java.awt.*;
 
 import static main.sample.Main.ingameObjects;
 import static main.sample.Main.spawner;
@@ -17,6 +21,7 @@ public abstract class AbtractBullet extends IngameObject {
     double damage;
     double angle;
     AbtractTower owner;
+    Image bulletImg;
 
     public boolean isInHitbox(AbtractEnemy enemy){
         if(centerI<=enemy.i+enemy.widthImg && centerI>=enemy.i
@@ -51,6 +56,8 @@ public abstract class AbtractBullet extends IngameObject {
         }
 
         //  System.out.println(angle);
+
+
         if(angle<=90)   {
             i=(int)(i+speed*Math.sin(angle/180*Math.PI));
             j=(int)(j-speed*Math.cos(angle/180*Math.PI));
@@ -68,11 +75,16 @@ public abstract class AbtractBullet extends IngameObject {
             j=(int)(j-speed*Math.sin((angle-270)/180*Math.PI));
         }
 
-
+    //    i=(int)(i+speed* Angle.transX(angle));
+    //    j=(int)(j+speed* Angle.transY(angle));
         centerI=i+32;
         centerJ=j+32;
 
 
+    }
+    @Override
+    public void render(GraphicsContext gc){
+        gc.drawImage(bulletImg,i,j);
     }
 
 

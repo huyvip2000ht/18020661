@@ -1,13 +1,16 @@
 package main.sample.GameObject.IngameObject.Enemy;
 
+import javafx.scene.SnapshotParameters;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 import main.sample.*;
 import main.sample.Road;
 import main.sample.GameObject.IngameObject.IngameObject;
 import main.sample.GameObject.IngameObject.Tower.AbtractTower;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-//import static main.sample.Main.gameObjects;
-import static main.sample.Main.ingameObjects;
 import static main.sample.Main.spawner;
 
 public abstract class AbtractEnemy extends IngameObject {
@@ -20,6 +23,10 @@ public abstract class AbtractEnemy extends IngameObject {
     public double health;
     public int widthImg;
     public int heightImg;
+
+    Image image;
+    ImageView imageView;
+    Image rotatedImage;
 
     private int wayPointIndex = 0;
 
@@ -97,6 +104,19 @@ public abstract class AbtractEnemy extends IngameObject {
         centerI+=speed;
         break;
     }
+  }
+  @Override
+  public void render(GraphicsContext gc){
+    SnapshotParameters snapshotParameters=new SnapshotParameters();
+    snapshotParameters.setFill(Color.TRANSPARENT);
+
+
+    imageView.setRotate(this.direction.getDegree());
+
+    rotatedImage=imageView.snapshot(snapshotParameters,null);
+
+    gc.drawImage(rotatedImage,i,j);
+
   }
 
 

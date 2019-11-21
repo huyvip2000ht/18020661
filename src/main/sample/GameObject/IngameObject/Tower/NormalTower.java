@@ -8,11 +8,10 @@ import javafx.scene.transform.Rotate;
 import main.sample.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import main.sample.GameObject.IngameObject.Bullet.MachineGunBullet;
+import main.sample.GameObject.IngameObject.Bullet.NormalBullet;
 
 public class NormalTower extends AbtractTower {
-    Image gunImg;
-
-    Image baseImg;
 
     public NormalTower(int x, int y) {
         this.x = x;
@@ -27,29 +26,27 @@ public class NormalTower extends AbtractTower {
         this.timeShot=0;
         this.angle=0;
         value=300;
+        check=false;
+
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
+
+        gunImgView=new ImageView(gunImg);
+
+        hitImgView=new ImageView(new Image("file:src/main/AssetsKit_2/64x64.png"));
+
+        hitImgView.setX(i);
+        hitImgView.setY(j);
+        hitImgView.setVisible(true);
+
+        clickTower();
+        Main.root.getChildren().add(hitImgView);
     }
 
-    public void render(GraphicsContext gc){
-        ImageView gunImgView=new ImageView(gunImg);
-        SnapshotParameters snapshotParameters=new SnapshotParameters();
 
 
-        snapshotParameters.setFill(Color.TRANSPARENT);
-        snapshotParameters.setTransform(new Rotate(this.angle,32,32));
-        snapshotParameters.setViewport(new Rectangle2D(0,0,64,64));
-
-
-        Image gun=gunImgView.snapshot(snapshotParameters,null);
-
-        bullets.forEach(g->g.render(gc));
-        gc.setStroke(Color.GREENYELLOW);
-        gc.strokeOval(i-fireRange*Config.SCALE +32,j-fireRange*Config.SCALE +32,fireRange*Config.SCALE *2,fireRange*Config.SCALE *2);
-        gc.drawImage(baseImg,i,j);
-        gc.drawImage(gun,i,j);
-
-
+    @Override
+    public void addBullet() {
+        bullets.add(new NormalBullet(this.i, this.j,this.angle,this));
     }
-
 }

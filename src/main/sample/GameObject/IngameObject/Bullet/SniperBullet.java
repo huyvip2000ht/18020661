@@ -13,7 +13,7 @@ import main.sample.GameObject.IngameObject.Tower.AbtractTower;
 import main.sample.SoundTrack;
 
 public class SniperBullet extends AbtractBullet {
-    private Image bulletImg;
+
 
     public SniperBullet(int i, int j, double angle, AbtractTower owner) {
         this.i = i;
