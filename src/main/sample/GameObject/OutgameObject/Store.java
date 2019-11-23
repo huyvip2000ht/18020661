@@ -20,17 +20,17 @@ public class Store extends OutgameObject {
     private  Image normalTower;
     private Image machineGunTower;
     private Image sniperTower;
-    private Image sell;
+//    private Image sell;
 
     public static ImageView normal;
     public static ImageView machineGun;
     public static ImageView sniper;
-    public static ImageView selling;
+//    public static ImageView selling;
 
     private boolean clickedNormal;
     private boolean clickedMachineGun;
     private boolean clickedSniper;
-    private boolean clickedSell;
+//    private boolean clickedSell;
 
     private double orgSceneX, orgSceneY;
     private double orgTranslateX, orgTranslateY;
@@ -39,7 +39,7 @@ public class Store extends OutgameObject {
         normalTower=new Image("file:src/main/AssetsKit_2/Normal.png");
         machineGunTower=new Image("file:src/main/AssetsKit_2/MachineGun.png");
         sniperTower=new Image("file:src/main/AssetsKit_2/Sniper.png");
-        sell=new Image("file:src/main/AssetsKit_2/$.png");
+  //      sell=new Image("file:src/main/AssetsKit_2/$.png");
 
         normal=new ImageView(normalTower);
         normal.setX(13* Config.SCALE);
@@ -53,14 +53,14 @@ public class Store extends OutgameObject {
         sniper.setX(13*Config.SCALE);
         sniper.setY(6*Config.SCALE);
 
-        selling=new ImageView(sell);
+  /*      selling=new ImageView(sell);
         selling.setX(13*Config.SCALE);
         selling.setY(7*Config.SCALE);
-
+*/
         clickedNormal=false;
         clickedMachineGun=false;
         clickedSniper=false;
-        clickedSell=false;
+  //      clickedSell=false;
 
 
         normal.setOnMousePressed((new EventHandler<MouseEvent>() {
@@ -70,7 +70,7 @@ public class Store extends OutgameObject {
                     clickedNormal=true;
                     clickedMachineGun=false;
                     clickedSniper=false;
-                    clickedSell=false;
+        //            clickedSell=false;
                 }
                 else clickedNormal=false;
             orgSceneX = t.getSceneX();
@@ -121,7 +121,7 @@ public class Store extends OutgameObject {
                     clickedMachineGun=true;
                     clickedSniper=false;
                     clickedNormal=false;
-                    clickedSell=false;
+                //    clickedSell=false;
                 }
                 else clickedMachineGun=false;
                 orgSceneX = t.getSceneX();
@@ -169,7 +169,7 @@ public class Store extends OutgameObject {
                     clickedSniper=true;
                     clickedMachineGun=false;
                     clickedNormal=false;
-                    clickedSell=false;
+                 //   clickedSell=false;
 
                 }
                 else clickedSniper=false;
@@ -211,7 +211,7 @@ public class Store extends OutgameObject {
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
             }
         }));
-        selling.setOnMousePressed((new EventHandler<MouseEvent>() {
+   /*     selling.setOnMousePressed((new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent t) {
                 if(!clickedSell){
@@ -259,7 +259,7 @@ public class Store extends OutgameObject {
                 ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
             }
-        }));
+        }));*/
 
     }
 
@@ -274,20 +274,20 @@ public class Store extends OutgameObject {
         gc.drawImage(normalTower,13* Config.SCALE,4* Config.SCALE);
         gc.drawImage(machineGunTower,13*Config.SCALE,5*Config.SCALE);
         gc.drawImage(sniperTower,13* Config.SCALE,6* Config.SCALE);
-        gc.drawImage(sell,13*Config.SCALE,7*Config.SCALE);
+  //      gc.drawImage(sell,13*Config.SCALE,7*Config.SCALE);
 
         gc.setFill(Color.BLACK);
         gc.fillText("300$",14* Config.SCALE,4* Config.SCALE +32);
         gc.fillText("500$",14* Config.SCALE,5* Config.SCALE +32);
         gc.fillText("700$",14* Config.SCALE,6* Config.SCALE +32);
 
-        gc.fillText("Wave: "+Main.spawner.index,13* Config.SCALE,11* Config.SCALE);
+        gc.fillText("Wave: "+Main.spawner.index,13* Config.SCALE+40,11* Config.SCALE+40);
 
         gc.setStroke(Color.BLACK);
         if(clickedNormal) gc.strokeRect(13*Config.SCALE,4*Config.SCALE,2*Config.SCALE,Config.SCALE);
         else if(clickedMachineGun) gc.strokeRect(13*Config.SCALE,5*Config.SCALE,2*Config.SCALE,Config.SCALE);
         else if(clickedSniper) gc.strokeRect(13*Config.SCALE,6*Config.SCALE,2*Config.SCALE,Config.SCALE);
-        else if(clickedSell) gc.strokeRect(13*Config.SCALE,7*Config.SCALE,Config.SCALE,Config.SCALE);
+    //    else if(clickedSell) gc.strokeRect(13*Config.SCALE,7*Config.SCALE,Config.SCALE,Config.SCALE);
 
     }
 

@@ -34,6 +34,7 @@ public class MachineGunTower extends AbtractTower {
         this.timeShot=0;
         this.angle=0;
         value=500;
+        level=1;
         check=false;
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile250.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
@@ -47,9 +48,21 @@ public class MachineGunTower extends AbtractTower {
         hitImgView.setVisible(true);
 
         clickTower();
+        enterTower();
+        exitTower();
         Main.root.getChildren().add(hitImgView);
     }
 
+    @Override
+    public String toString() {
+
+        return   "MACHINE GUN\n" +
+                "Level: "+level+" \n"
+                +"Damage: "+ Math.round(damage*100d)/100d +"\n"
+                +"Fire Range: "+Math.round(fireRange*100d)/100d+"\n"
+                +"Fire Rate: "+Math.round(fireRate*100d)/100d
+                ;
+    }
 
     @Override
     public void addBullet() {

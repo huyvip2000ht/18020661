@@ -15,6 +15,7 @@ import main.sample.GameObject.IngameObject.Bullet.AbtractBullet;
 import main.sample.GameObject.IngameObject.Enemy.AbtractEnemy;
 import main.sample.GameObject.IngameObject.Bullet.NormalBullet;
 import main.sample.GameObject.IngameObject.IngameObject;
+import main.sample.GameObject.OutgameObject.Info;
 import main.sample.Point;
 
 import java.util.ArrayList;
@@ -31,9 +32,10 @@ public abstract class AbtractTower extends IngameObject {
     double angle;
     double timeShot;
     public int value;
+    public int level;
 
-    Image gunImg;
-    Image baseImg;
+    public Image gunImg;
+    public Image baseImg;
     ImageView gunImgView;
     ImageView hitImgView;
     Image rotatedGun;
@@ -45,6 +47,22 @@ public abstract class AbtractTower extends IngameObject {
     public List<AbtractBullet> bullets=new ArrayList<>();
 
 
+    public void uplevel(){
+        if(level<3) {
+
+            level++;
+            damage=damage*1.5;
+            fireRate=fireRate/1.3;
+            fireRange=fireRange*1.1;
+            value= (int) (value*1.3);
+            if(Main.reward.getReward()>=0.5*value){
+                Main.reward.setReward((int) (Main.reward.getReward()-0.5*value));
+            }
+
+            System.out.println(level);
+        }
+
+    }
 
    boolean haveTarget(AbtractEnemy enemy){
        if(Point.distance(this.centerI,this.centerJ,enemy.centerI,enemy.centerJ)
@@ -60,10 +78,31 @@ public abstract class AbtractTower extends IngameObject {
        hitImgView.setOnMouseClicked(new EventHandler<MouseEvent>() {
            @Override
            public void handle(MouseEvent mouseEvent) {
-               check=!check;
+               try {
+                   Info.showInfo(AbtractTower.this);
+               }
+               catch(IllegalArgumentException e){};
+           //    System.out.println("okoko");
            }
        });
    }
+   public void enterTower(){
+       hitImgView.setOnMouseEntered(new EventHandler<MouseEvent>() {
+           @Override
+           public void handle(MouseEvent mouseEvent) {
+               check=true;
+           }
+       });
+   }
+    public void exitTower(){
+        hitImgView.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                check=false;
+            }
+        });
+    }
+
 
     public void update(){
        for(AbtractEnemy a: spawner.enemies){
@@ -100,6 +139,7 @@ public abstract class AbtractTower extends IngameObject {
        bullets.forEach(g->g.render(gc));
        if(check) {
            gc.setStroke(Color.GREENYELLOW);
+
            gc.strokeOval(i - fireRange * Config.SCALE + 32, j - fireRange * Config.SCALE + 32, fireRange * Config.SCALE * 2, fireRange * Config.SCALE * 2);
        }
        gc.drawImage(baseImg,i,j);
@@ -110,4 +150,5 @@ public abstract class AbtractTower extends IngameObject {
     public double getFireRange() {
         return fireRange;
     }
+    public abstract String toString();
 }

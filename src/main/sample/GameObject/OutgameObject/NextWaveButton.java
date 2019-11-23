@@ -22,8 +22,8 @@ public class NextWaveButton extends OutgameObject {
         image=new Image("file:src/main/AssetsKit_2/NextWaveButton.png");
         image_ready=new Image("file:src/main/AssetsKit_2/NextWaveButton_ready.png");
         imageView=new ImageView(image);
-        imageView.setX(13* Config.SCALE);
-        imageView.setY(9*Config.SCALE);
+        imageView.setX(12* Config.SCALE+32);
+        imageView.setY(11*Config.SCALE);
         imageView.setOnMousePressed((new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {

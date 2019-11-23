@@ -37,6 +37,8 @@ public class SniperTower extends AbtractTower {
         this.angle=0;
         value=700;
         check=false;
+        level=1;
+
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile204.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
 
@@ -49,7 +51,18 @@ public class SniperTower extends AbtractTower {
         hitImgView.setVisible(true);
 
         clickTower();
+        enterTower();
+        exitTower();
         Main.root.getChildren().add(hitImgView);
+    }
+    @Override
+    public String toString() {
+        return   "SNIPER\n" +
+                "Level: "+level+" \n"
+                +"Damage: "+Math.round(damage*100d)/100d +"\n"
+                +"Fire Range: "+Math.round(fireRange*100d)/100d+"\n"
+                +"Fire Rate: "+Math.round(fireRate*100d)/100d
+                ;
     }
 
     @Override

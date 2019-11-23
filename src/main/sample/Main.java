@@ -33,6 +33,7 @@ public class Main extends Application {
     public static NextWaveButton nextWaveButton=new NextWaveButton();
     public static Group root = new Group();
     public static Scene scene = new Scene(root);
+    public static Info info=new Info();
     public static List<IngameObject> ingameObjects = new ArrayList<>();
     public static List<OutgameObject> outgameObjects = new ArrayList<>();
     public static Spawner spawner = new Spawner();
@@ -71,7 +72,7 @@ public class Main extends Application {
                 root.getChildren().add(Store.normal);
                 root.getChildren().add(Store.machineGun);
                 root.getChildren().add(Store.sniper);
-                root.getChildren().add(Store.selling);
+   //             root.getChildren().add(Store.selling);
                 root.getChildren().add(NextWaveButton.imageView);
 
                 timer = new AnimationTimer() {
@@ -98,7 +99,7 @@ public class Main extends Application {
         outgameObjects.add(reward);
         outgameObjects.add(store);
         outgameObjects.add(lives);
-
+        outgameObjects.add(info);
         ingameObjects.add(spawner);
 
 

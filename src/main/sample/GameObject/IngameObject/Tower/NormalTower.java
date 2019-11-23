@@ -27,6 +27,7 @@ public class NormalTower extends AbtractTower {
         this.angle=0;
         value=300;
         check=false;
+        level=1;
 
         gunImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");
         baseImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
@@ -40,7 +41,18 @@ public class NormalTower extends AbtractTower {
         hitImgView.setVisible(true);
 
         clickTower();
+        enterTower();
+        exitTower();
         Main.root.getChildren().add(hitImgView);
+    }
+    @Override
+    public String toString() {
+        return   "NORMAL\n" +
+                 "Level: "+level+" \n"
+                +"Damage: "+Math.round(damage*100d)/100d +"\n"
+                +"Fire Range: "+Math.round(fireRange*100d)/100d+"\n"
+                +"Fire Rate: "+Math.round(fireRate*100d)/100d
+                ;
     }
 
 
