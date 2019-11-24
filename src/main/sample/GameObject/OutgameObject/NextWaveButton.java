@@ -6,8 +6,10 @@ import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.MediaPlayer;
 import main.sample.Config;
 import main.sample.Main;
+import main.sample.SoundTrack;
 
 import java.awt.*;
 
@@ -32,6 +34,8 @@ public class NextWaveButton extends OutgameObject {
                 else {
                     Main.spawner.index++;
                     Main.spawner.updateTime();
+                    MediaPlayer enterMediaPlayer=new MediaPlayer(SoundTrack.waveMedia);
+                    enterMediaPlayer.play();
                 }
 
             }
@@ -40,6 +44,9 @@ public class NextWaveButton extends OutgameObject {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 imageView.setImage(image_ready);
+                MediaPlayer enterMediaPlayer=new MediaPlayer(SoundTrack.enterMedia);
+                enterMediaPlayer.play();
+
 
             }
         });
@@ -54,7 +61,6 @@ public class NextWaveButton extends OutgameObject {
 
     @Override
     public void render(GraphicsContext gc) {
-       // gc.drawImage(image,13*Config.SCALE,9*Config.SCALE,Config.SCALE,Config.SCALE);
 
     }
 

@@ -49,17 +49,18 @@ public abstract class AbtractTower extends IngameObject {
 
     public void uplevel(){
         if(level<3) {
-
-            level++;
-            damage=damage*1.5;
-            fireRate=fireRate/1.3;
-            fireRange=fireRange*1.1;
-            value= (int) (value*1.3);
             if(Main.reward.getReward()>=0.5*value){
+                level++;
+                damage=damage*1.5;
+                fireRate=fireRate/1.3;
+                fireRange=fireRange*1.1;
+                value= (int) (value*1.3);
+
                 Main.reward.setReward((int) (Main.reward.getReward()-0.5*value));
+                MediaPlayer mediaPlayer=new MediaPlayer(SoundTrack.buildMedia);
+                mediaPlayer.play();
             }
 
-            System.out.println(level);
         }
 
     }
@@ -80,6 +81,8 @@ public abstract class AbtractTower extends IngameObject {
            public void handle(MouseEvent mouseEvent) {
                try {
                    Info.showInfo(AbtractTower.this);
+
+
                }
                catch(IllegalArgumentException e){};
            //    System.out.println("okoko");
@@ -91,6 +94,8 @@ public abstract class AbtractTower extends IngameObject {
            @Override
            public void handle(MouseEvent mouseEvent) {
                check=true;
+               MediaPlayer enterMediaPlayer=new MediaPlayer(SoundTrack.enterMedia);
+               enterMediaPlayer.play();
            }
        });
    }
@@ -114,9 +119,9 @@ public abstract class AbtractTower extends IngameObject {
 
                        timeShot=tick.getTime();
 
-                       MediaPlayer x=new MediaPlayer(SoundTrack.towerShotMedia);
+                /*       MediaPlayer x=new MediaPlayer(SoundTrack.towerShotMedia);
                        x.setVolume(0.5);
-                       x.play();
+                       x.play();*/
 
                    }
                    break;

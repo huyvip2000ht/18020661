@@ -74,6 +74,11 @@ public class Main extends Application {
                 root.getChildren().add(Store.sniper);
    //             root.getChildren().add(Store.selling);
                 root.getChildren().add(NextWaveButton.imageView);
+                SoundTrack.backgroundMediaPlayer.stop();
+                SoundTrack.battleMediaPlayer.setVolume(2);
+                SoundTrack.battleMediaPlayer.play();
+
+
 
                 timer = new AnimationTimer() {
                     @Override
@@ -101,6 +106,7 @@ public class Main extends Application {
         outgameObjects.add(lives);
         outgameObjects.add(info);
         ingameObjects.add(spawner);
+
 
 
 

@@ -22,6 +22,7 @@ import static main.sample.Main.*;
 
 public class SniperTower extends AbtractTower {
 
+    private static MediaPlayer mediaPlayer;
 
     public SniperTower(int x, int y) {
         this.x = x;
@@ -55,6 +56,21 @@ public class SniperTower extends AbtractTower {
         exitTower();
         Main.root.getChildren().add(hitImgView);
     }
+
+    @Override
+    public void uplevel() {
+        super.uplevel();
+        if(level==2){
+            gunImg=new Image("file:src/main/AssetsKit_2/PNG/Updated tower/SniperLV2.png");
+
+        }
+        else if(level==3){
+            gunImg=new Image("file:src/main/AssetsKit_2/PNG/Updated tower/SniperLV3.png");
+
+        }
+            gunImgView=new ImageView(gunImg);
+    }
+
     @Override
     public String toString() {
         return   "SNIPER\n" +
@@ -68,6 +84,8 @@ public class SniperTower extends AbtractTower {
     @Override
     public void addBullet() {
         bullets.add(new SniperBullet(this.i, this.j,this.angle,this));
+        mediaPlayer=new MediaPlayer(SoundTrack.sniperTowerShotMedia);
+        mediaPlayer.play();
     }
 
 }

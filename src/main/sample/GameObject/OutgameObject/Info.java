@@ -2,6 +2,7 @@ package main.sample.GameObject.OutgameObject;
 
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.media.MediaPlayer;
 import main.sample.Config;
 import main.sample.GameObject.IngameObject.Tower.AbtractTower;
 
@@ -11,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import main.sample.Main;
 import main.sample.Map;
+import main.sample.SoundTrack;
 
 
 import java.awt.*;
@@ -26,6 +28,7 @@ public class Info extends OutgameObject {
 
     public static void showInfo(AbtractTower owner){
 
+
         sellImageView.setX(13*Config.SCALE-32);
         sellImageView.setY(10*Config.SCALE);
 
@@ -36,6 +39,8 @@ public class Info extends OutgameObject {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 owner.uplevel();
+                MediaPlayer enterMediaPlayer=new MediaPlayer(SoundTrack.clickMedia);
+                enterMediaPlayer.play();
             }
         });
 
@@ -49,6 +54,9 @@ public class Info extends OutgameObject {
 
                 Main.root.getChildren().remove(sellImageView);
                 Main.root.getChildren().remove(upgradeImageView);
+
+                MediaPlayer enterMediaPlayer=new MediaPlayer(SoundTrack.sellMedia);
+                enterMediaPlayer.play();
             }
         });
 
@@ -65,6 +73,10 @@ public class Info extends OutgameObject {
             Main.root.getChildren().add(sellImageView);
             Main.root.getChildren().add(upgradeImageView);
         }
+        if(check) {
+            MediaPlayer clickMediaPlayer = new MediaPlayer(SoundTrack.clickMedia);
+            clickMediaPlayer.play();
+        }
     }
     public static void drawInfoCorner(GraphicsContext gc){
         gc.strokeRect(12* Config.SCALE,7*Config.SCALE,4*Config.SCALE,4*Config.SCALE);
@@ -78,6 +90,7 @@ public class Info extends OutgameObject {
             gc.fillText(owner.toString(), 12 * Config.SCALE+20 , 8 * Config.SCALE-32);
             gc.drawImage(owner.baseImg,15*Config.SCALE,7*Config.SCALE+32);
             gc.drawImage(owner.gunImg,15*Config.SCALE,7*Config.SCALE+32);
+
 
         }
 

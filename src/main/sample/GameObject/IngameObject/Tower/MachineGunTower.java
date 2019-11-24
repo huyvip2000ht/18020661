@@ -5,6 +5,7 @@ import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
@@ -17,9 +18,13 @@ import main.sample.GameObject.IngameObject.IngameObject;
 import main.sample.Main;
 import main.sample.SoundTrack;
 
+import java.io.File;
+
 import static main.sample.Main.*;
 
 public class MachineGunTower extends AbtractTower {
+
+    private static MediaPlayer mediaPlayer;
 
     public MachineGunTower(int x, int y) {
         this.x = x;
@@ -52,6 +57,21 @@ public class MachineGunTower extends AbtractTower {
         exitTower();
         Main.root.getChildren().add(hitImgView);
     }
+    @Override
+    public void uplevel() {
+        super.uplevel();
+        if(level==2){
+            gunImg=new Image("file:src/main/AssetsKit_2/PNG/Updated tower/MachinegunLV2.png");
+
+        }
+        else if(level==3){
+            gunImg=new Image("file:src/main/AssetsKit_2/PNG/Updated tower/MachinegunLV3.png");
+
+        }
+        gunImgView=new ImageView(gunImg);
+    }
+
+
 
     @Override
     public String toString() {
@@ -67,6 +87,8 @@ public class MachineGunTower extends AbtractTower {
     @Override
     public void addBullet() {
         bullets.add(new MachineGunBullet(this.i, this.j,this.angle,this));
+        mediaPlayer=new MediaPlayer(SoundTrack.machineGunTowerShotMedia);
+        mediaPlayer.play();
     }
 
 

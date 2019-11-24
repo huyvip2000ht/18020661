@@ -2,6 +2,7 @@ package main.sample.GameObject.OutgameObject;
 
 import javafx.event.EventHandler;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import main.sample.Config;
 import javafx.scene.image.Image;
@@ -14,32 +15,32 @@ import main.sample.GameObject.IngameObject.Tower.NormalTower;
 import main.sample.GameObject.IngameObject.Tower.SniperTower;
 import main.sample.Main;
 import main.sample.Map;
+import main.sample.SoundTrack;
 
 public class Store extends OutgameObject {
 
     private  Image normalTower;
     private Image machineGunTower;
     private Image sniperTower;
-//    private Image sell;
+
 
     public static ImageView normal;
     public static ImageView machineGun;
     public static ImageView sniper;
-//    public static ImageView selling;
+
 
     private boolean clickedNormal;
     private boolean clickedMachineGun;
     private boolean clickedSniper;
-//    private boolean clickedSell;
 
     private double orgSceneX, orgSceneY;
     private double orgTranslateX, orgTranslateY;
+    private static MediaPlayer enterMediaPlayer;
 
     public Store(){
         normalTower=new Image("file:src/main/AssetsKit_2/Normal.png");
         machineGunTower=new Image("file:src/main/AssetsKit_2/MachineGun.png");
         sniperTower=new Image("file:src/main/AssetsKit_2/Sniper.png");
-  //      sell=new Image("file:src/main/AssetsKit_2/$.png");
 
         normal=new ImageView(normalTower);
         normal.setX(13* Config.SCALE);
@@ -53,31 +54,35 @@ public class Store extends OutgameObject {
         sniper.setX(13*Config.SCALE);
         sniper.setY(6*Config.SCALE);
 
-  /*      selling=new ImageView(sell);
-        selling.setX(13*Config.SCALE);
-        selling.setY(7*Config.SCALE);
-*/
+
         clickedNormal=false;
         clickedMachineGun=false;
         clickedSniper=false;
-  //      clickedSell=false;
 
 
+        normal.setOnMouseEntered((new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                clickedNormal=true;
+
+            }
+        }));
+        normal.setOnMouseExited((new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                clickedNormal=false;
+            }
+        }));
         normal.setOnMousePressed((new EventHandler<MouseEvent>() {
 
             public void handle(MouseEvent t) {
-                if(!clickedNormal) {
-                    clickedNormal=true;
-                    clickedMachineGun=false;
-                    clickedSniper=false;
-        //            clickedSell=false;
-                }
-                else clickedNormal=false;
+
             orgSceneX = t.getSceneX();
             orgSceneY = t.getSceneY();
             orgTranslateX = ((ImageView)(t.getSource())).getTranslateX();
             orgTranslateY = ((ImageView)(t.getSource())).getTranslateY();
-
+                enterMediaPlayer=new MediaPlayer(SoundTrack.enterMedia);
+                enterMediaPlayer.play();
 
         }
         }));
@@ -105,8 +110,9 @@ public class Store extends OutgameObject {
                     Map.map_block[newX][newY]=2;
                     Main.reward.setReward(Main.reward.getReward()-Config.NORMAL_VALUE);
                     Main.ingameObjects.add(new NormalTower(newX, newY));
-                 //   Map.draw();
-                  //  System.out.println("placed");
+
+                    MediaPlayer mediaPlayer=new MediaPlayer(SoundTrack.buildMedia);
+                    mediaPlayer.play();
                 }
                 ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
@@ -114,21 +120,29 @@ public class Store extends OutgameObject {
             }
         }));
 
+        machineGun.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                clickedMachineGun=true;
+
+            }
+        });
+        machineGun.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                clickedMachineGun=false;
+            }
+        });
         machineGun.setOnMousePressed((new EventHandler<MouseEvent>() {
 
             public void handle(MouseEvent t) {
-                if(!clickedMachineGun) {
-                    clickedMachineGun=true;
-                    clickedSniper=false;
-                    clickedNormal=false;
-                //    clickedSell=false;
-                }
-                else clickedMachineGun=false;
+
                 orgSceneX = t.getSceneX();
                 orgSceneY = t.getSceneY();
                 orgTranslateX = ((ImageView)(t.getSource())).getTranslateX();
                 orgTranslateY = ((ImageView)(t.getSource())).getTranslateY();
-
+                enterMediaPlayer=new MediaPlayer(SoundTrack.enterMedia);
+                enterMediaPlayer.play();
 
             }
         }));
@@ -157,27 +171,38 @@ public class Store extends OutgameObject {
                     Main.reward.setReward(Main.reward.getReward()-Config.MACHINE_GUN_VALUE);
                     Main.ingameObjects.add(new MachineGunTower(newX, newY));
 
+                    MediaPlayer mediaPlayer=new MediaPlayer(SoundTrack.buildMedia);
+                    mediaPlayer.play();
+
                 }
                 ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
             }
         }));
+        sniper.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                clickedSniper=true;
+
+            }
+        });
+        sniper.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                clickedSniper=false;
+            }
+        });
+
         sniper.setOnMousePressed((new EventHandler<MouseEvent>() {
 
             public void handle(MouseEvent t) {
-                if(!clickedSniper) {
-                    clickedSniper=true;
-                    clickedMachineGun=false;
-                    clickedNormal=false;
-                 //   clickedSell=false;
 
-                }
-                else clickedSniper=false;
                 orgSceneX = t.getSceneX();
                 orgSceneY = t.getSceneY();
                 orgTranslateX = ((ImageView)(t.getSource())).getTranslateX();
                 orgTranslateY = ((ImageView)(t.getSource())).getTranslateY();
-
+                enterMediaPlayer=new MediaPlayer(SoundTrack.enterMedia);
+                enterMediaPlayer.play();
 
             }
         }));
@@ -199,67 +224,19 @@ public class Store extends OutgameObject {
 
                 int newX= (int) ((((ImageView)(mouseEvent.getSource())).getX()+((ImageView)(mouseEvent.getSource())).getTranslateX()+32)/Config.SCALE);
                 int newY= (int) ((((ImageView)(mouseEvent.getSource())).getY()+((ImageView)(mouseEvent.getSource())).getTranslateY()+32)/Config.SCALE);
-             //   System.out.println(newX+" "+newY);
                 if(Map.map_block[newX][newY]==0 && Config.SNIPER_VALUE <=Main.reward.getReward()) {
                     Map.map_block[newX][newY]=2;
                     Main.reward.setReward(Main.reward.getReward()- Config.SNIPER_VALUE);
                     Main.ingameObjects.add(new SniperTower(newX, newY));
-                    //   Map.draw();
-              //      System.out.println("placed");
+
+                    MediaPlayer mediaPlayer=new MediaPlayer(SoundTrack.buildMedia);
+                    mediaPlayer.play();
+
                 }
                 ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
                 ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
             }
         }));
-   /*     selling.setOnMousePressed((new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent t) {
-                if(!clickedSell){
-                    clickedSell=true;
-                    clickedSniper=false;
-                    clickedMachineGun=false;
-                    clickedNormal=false;
-
-                }
-                else clickedSell=false;
-                orgSceneX = t.getSceneX();
-                orgSceneY = t.getSceneY();
-                orgTranslateX = ((ImageView)(t.getSource())).getTranslateX();
-                orgTranslateY = ((ImageView)(t.getSource())).getTranslateY();
-            }
-        }));
-        selling.setOnMouseDragged((new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent t) {
-                double offsetX = t.getSceneX() - orgSceneX;
-                double offsetY = t.getSceneY() - orgSceneY;
-                double newTranslateX = orgTranslateX + offsetX;
-                double newTranslateY = orgTranslateY + offsetY;
-
-                ((ImageView)(t.getSource())).setTranslateX(newTranslateX);
-                ((ImageView)(t.getSource())).setTranslateY(newTranslateY);
-            }
-        }));
-        selling.setOnMouseReleased((new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                int newX= (int) ((((ImageView)(mouseEvent.getSource())).getX()+((ImageView)(mouseEvent.getSource())).getTranslateX()+32)/Config.SCALE);
-                int newY= (int) ((((ImageView)(mouseEvent.getSource())).getY()+((ImageView)(mouseEvent.getSource())).getTranslateY()+32)/Config.SCALE);
-             //   System.out.println(newX+" "+newY);
-                if(Map.map_block[newX][newY]==2){
-                    Map.map_block[newX][newY]=0;
-                    for(IngameObject a: Main.ingameObjects){
-                        if(a.x==newX&&a.y==newY){
-                            Main.reward.setReward(Main.reward.getReward()+((AbtractTower)a).value/3);
-                           Main.ingameObjects.remove(a);
-                           break;
-                        }
-                    }
-                }
-                ((ImageView)(mouseEvent.getSource())).setTranslateX(0);
-                ((ImageView)(mouseEvent.getSource())).setTranslateY(0);
-            }
-        }));*/
 
     }
 
@@ -274,7 +251,7 @@ public class Store extends OutgameObject {
         gc.drawImage(normalTower,13* Config.SCALE,4* Config.SCALE);
         gc.drawImage(machineGunTower,13*Config.SCALE,5*Config.SCALE);
         gc.drawImage(sniperTower,13* Config.SCALE,6* Config.SCALE);
-  //      gc.drawImage(sell,13*Config.SCALE,7*Config.SCALE);
+
 
         gc.setFill(Color.BLACK);
         gc.fillText("300$",14* Config.SCALE,4* Config.SCALE +32);
@@ -287,7 +264,7 @@ public class Store extends OutgameObject {
         if(clickedNormal) gc.strokeRect(13*Config.SCALE,4*Config.SCALE,2*Config.SCALE,Config.SCALE);
         else if(clickedMachineGun) gc.strokeRect(13*Config.SCALE,5*Config.SCALE,2*Config.SCALE,Config.SCALE);
         else if(clickedSniper) gc.strokeRect(13*Config.SCALE,6*Config.SCALE,2*Config.SCALE,Config.SCALE);
-    //    else if(clickedSell) gc.strokeRect(13*Config.SCALE,7*Config.SCALE,Config.SCALE,Config.SCALE);
+
 
     }
 

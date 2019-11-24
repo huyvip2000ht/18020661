@@ -3,6 +3,7 @@ package main.sample.GameObject.IngameObject.Tower;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 import main.sample.*;
@@ -12,6 +13,8 @@ import main.sample.GameObject.IngameObject.Bullet.MachineGunBullet;
 import main.sample.GameObject.IngameObject.Bullet.NormalBullet;
 
 public class NormalTower extends AbtractTower {
+
+    private static MediaPlayer mediaPlayer;
 
     public NormalTower(int x, int y) {
         this.x = x;
@@ -55,10 +58,24 @@ public class NormalTower extends AbtractTower {
                 ;
     }
 
+    @Override
+    public void uplevel() {
+        super.uplevel();
+        if(level==2){
+            gunImg=new Image("file:src/main/AssetsKit_2/PNG/Updated tower/NormalLV2.png");
 
+        }
+        else if(level==3){
+            gunImg=new Image("file:src/main/AssetsKit_2/PNG/Updated tower/NormalLV3.png");
+
+        }
+            gunImgView=new ImageView(gunImg);
+    }
 
     @Override
     public void addBullet() {
         bullets.add(new NormalBullet(this.i, this.j,this.angle,this));
+        mediaPlayer=new MediaPlayer(SoundTrack.normalTowerShotMedia);
+        mediaPlayer.play();
     }
 }

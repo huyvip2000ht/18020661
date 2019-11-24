@@ -86,8 +86,8 @@ public class Spawner extends IngameObject {
             }
         }
         else if(level == 4){
-            numberofEnemy=3;
-            delayTime=20;
+            numberofEnemy=10;
+            delayTime=40;
             for (int n = 0; n < numberofEnemy; n++) {
                 if (tick.getTime() == timeCreated + delayTime * n) {
 
@@ -96,8 +96,8 @@ public class Spawner extends IngameObject {
             }
         }
         else if(level ==5){
-            numberofEnemy=1;
-            delayTime=0;
+            numberofEnemy=3;
+            delayTime=50;
             for (int n = 0; n < numberofEnemy; n++) {
                 if (tick.getTime() == timeCreated + delayTime * n) {
 
