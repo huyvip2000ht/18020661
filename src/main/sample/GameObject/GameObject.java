@@ -7,6 +7,7 @@ public interface GameObject {
 
 
     void render(GraphicsContext gc);
+
     void update();
 
 }

@@ -18,11 +18,12 @@ import static main.sample.Main.*;
 
 public class Lives extends OutgameObject {
     private int lives;
-    public Lives(int lives){
-        this.lives=lives;
 
-        this.i=13* Config.SCALE;
-        this.j=3*Config.SCALE;
+    public Lives(int lives) {
+        this.lives = lives;
+
+        this.i = 13 * Config.SCALE;
+        this.j = 3 * Config.SCALE;
     }
 
     public int getLives() {
@@ -35,22 +36,22 @@ public class Lives extends OutgameObject {
 
     @Override
     public String toString() {
-        return "Lives: " +String.valueOf(lives);
+        return "Lives: " + String.valueOf(lives);
     }
 
     @Override
     public void render(GraphicsContext gc) {
-        gc.setFont(Font.font("Abyssinica SIL", FontWeight.BOLD, FontPosture.REGULAR,25));
+        gc.setFont(Font.font("Abyssinica SIL", FontWeight.BOLD, FontPosture.REGULAR, 25));
         gc.setFill(Color.BLACK);
-        gc.fillText(toString(),i,j);
-        if(lives<=0) {
+        gc.fillText(toString(), i, j);
+        if (lives <= 0) {
 
-            ImageView gameover=new ImageView(new Image("file:src/main/AssetsKit_2/Gameover.jpg"));
-            gameover.setFitWidth(16*Config.SCALE);
-            gameover.setFitHeight(12*Config.SCALE);
+            ImageView gameover = new ImageView(new Image("file:src/main/AssetsKit_2/Gameover.jpg"));
+            gameover.setFitWidth(16 * Config.SCALE);
+            gameover.setFitHeight(12 * Config.SCALE);
 
             timer.stop();
-            SoundTrack.backgroundMediaPlayer.stop();
+            SoundTrack.battleMediaPlayer.stop();
             SoundTrack.gameOverMediaPlayer.play();
 
             root.getChildren().add(gameover);

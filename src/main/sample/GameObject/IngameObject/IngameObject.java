@@ -3,7 +3,7 @@ package main.sample.GameObject.IngameObject;
 import main.sample.GameObject.GameObject;
 
 public abstract class IngameObject implements GameObject {
-    public int x,y,i,j,centerI,centerJ;
+    public int x, y, i, j, centerI, centerJ;
 
     public int getX() {
         return x;

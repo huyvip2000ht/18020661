@@ -7,11 +7,11 @@ public class Reward extends OutgameObject {
 
     private int reward;
 
-    public Reward(){
-        this.reward=Config.REWARD;
+    public Reward() {
+        this.reward = Config.REWARD;
 
-        this.i=13* Config.SCALE;
-        this.j=2*Config.SCALE;
+        this.i = 13 * Config.SCALE;
+        this.j = 2 * Config.SCALE;
     }
 
     public int getReward() {
@@ -22,14 +22,14 @@ public class Reward extends OutgameObject {
         this.reward = reward;
     }
 
-    public String toString(){
-        return "Reward: "+String.valueOf(reward);
+    public String toString() {
+        return "Reward: " + String.valueOf(reward);
     }
 
 
     @Override
     public void render(GraphicsContext gc) {
-        gc.fillText(toString(),i,j);
+        gc.fillText(toString(), i, j);
     }
 
     @Override

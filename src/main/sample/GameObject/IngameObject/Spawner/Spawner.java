@@ -1,12 +1,9 @@
 package main.sample.GameObject.IngameObject.Spawner;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 import main.sample.Config;
 import main.sample.GameObject.IngameObject.Enemy.*;
 import main.sample.GameObject.IngameObject.IngameObject;
-
-import java.util.Random;
 
 import java.util.*;
 
@@ -19,11 +16,10 @@ public class Spawner extends IngameObject {
     private int numberofEnemy;
 
 
+    public List<AbstractEnemy> enemies = new ArrayList<>();
 
-    public List<AbtractEnemy> enemies = new ArrayList<>();
 
-
-    public int index=1;
+    public int index = 1;
     private boolean check;
 
 
@@ -52,52 +48,47 @@ public class Spawner extends IngameObject {
             delayTime = 20;
             for (int n = 0; n < numberofEnemy; n++) {
                 if (tick.getTime() == timeCreated + delayTime * n) {
-                    enemies.add(new NormalEnemy(2,12));
+                    enemies.add(new NormalEnemy(2, 12));
                 }
             }
-        }
-        else if (level == 2) {
-            numberofEnemy=10;
+        } else if (level == 2) {
+            numberofEnemy = 10;
 
-            delayTime=20;
+            delayTime = 20;
             for (int n = 0; n < numberofEnemy; n++) {
                 if (tick.getTime() == timeCreated + delayTime * n) {
 
                     enemies.add(new SmallerEnemy(2, 12));
                 }
             }
-        }
-        else if (level == 3){
-            numberofEnemy=20;
+        } else if (level == 3) {
+            numberofEnemy = 20;
 
-            delayTime=20;
+            delayTime = 20;
             for (int n = 0; n < numberofEnemy; n++) {
                 if (tick.getTime() == timeCreated + delayTime * n) {
-                    if(check) {
-                        check= false;
+                    if (check) {
+                        check = false;
                         enemies.add(new SmallerEnemy(2, 12));
-                    }
-                    else {
-                        check=true;
-                        enemies.add(new NormalEnemy(2,12));
+                    } else {
+                        check = true;
+                        enemies.add(new NormalEnemy(2, 12));
                     }
 
                 }
             }
-        }
-        else if(level == 4){
-            numberofEnemy=10;
-            delayTime=40;
+        } else if (level == 4) {
+            numberofEnemy = 10;
+            delayTime = 40;
             for (int n = 0; n < numberofEnemy; n++) {
                 if (tick.getTime() == timeCreated + delayTime * n) {
 
                     enemies.add(new TankerEnemy(2, 12));
                 }
             }
-        }
-        else if(level ==5){
-            numberofEnemy=3;
-            delayTime=50;
+        } else if (level == 5) {
+            numberofEnemy = 3;
+            delayTime = 50;
             for (int n = 0; n < numberofEnemy; n++) {
                 if (tick.getTime() == timeCreated + delayTime * n) {
 
@@ -106,11 +97,13 @@ public class Spawner extends IngameObject {
             }
         }
     }
-    public boolean isHappening(){
+
+    public boolean isHappening() {
         return !enemies.isEmpty();
     }
-    public void updateTime(){
-        timeCreated=tick.getTime()+1;
+
+    public void updateTime() {
+        timeCreated = tick.getTime() + 1;
     }
 
 
@@ -124,7 +117,7 @@ public class Spawner extends IngameObject {
 
         }*/
 
-        enemies.forEach(AbtractEnemy::update);
+        enemies.forEach(AbstractEnemy::update);
 
 
     }

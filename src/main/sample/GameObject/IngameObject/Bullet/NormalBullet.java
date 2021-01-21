@@ -1,40 +1,28 @@
 package main.sample.GameObject.IngameObject.Bullet;
 
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.media.MediaPlayer;
 import main.sample.Config;
-import main.sample.GameObject.IngameObject.Bullet.AbtractBullet;
-import main.sample.GameObject.IngameObject.Enemy.AbtractEnemy;
-import main.sample.GameObject.GameObject;
-import main.sample.GameObject.IngameObject.IngameObject;
-import main.sample.GameObject.IngameObject.Tower.AbtractTower;
-import main.sample.Point;
-import main.sample.SoundTrack;
-
-
-import static main.sample.Main.ingameObjects;
+import main.sample.GameObject.IngameObject.Tower.AbstractTower;
 //import static main.sample.Main.gameObjects;
 
-public class NormalBullet extends AbtractBullet {
+public class NormalBullet extends AbstractBullet {
 
 
-    public NormalBullet(int i ,int j,double angle,AbtractTower owner){
-        this.i=i;
-        this.j=j;
+    public NormalBullet(int i, int j, double angle, AbstractTower owner) {
+        this.i = i;
+        this.j = j;
 
-        centerI=i+32;
-        centerJ=j+32;
+        centerI = i + 32;
+        centerJ = j + 32;
 
-        this.owner=owner;
+        this.owner = owner;
 
-        damage=Config.NORMAL_GUN_DAMAGE;
-        speed=Config.NORMAL_GUN_SPEED;
-        this.angle=angle;
+        damage = Config.NORMAL_GUN_DAMAGE;
+        speed = Config.NORMAL_GUN_SPEED;
+        this.angle = angle;
 
 
-
-        bulletImg=new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile272.png") ;
+        bulletImg = new Image("file:src/main/AssetsKit_2/PNG/Default size/towerDefense_tile272.png");
     }
 
 }

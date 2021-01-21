@@ -18,6 +18,7 @@ import main.sample.GameObject.IngameObject.IngameObject;
 import main.sample.GameObject.IngameObject.Spawner.Spawner;
 import main.sample.GameObject.OutgameObject.*;
 import javafx.event.EventHandler;
+
 import java.util.*;
 
 
@@ -30,10 +31,10 @@ public class Main extends Application {
     public static Reward reward = new Reward();
     public static Lives lives = new Lives(Config.LIVES);
     public static Store store = new Store();
-    public static NextWaveButton nextWaveButton=new NextWaveButton();
+    public static NextWaveButton nextWaveButton = new NextWaveButton();
     public static Group root = new Group();
     public static Scene scene = new Scene(root);
-    public static Info info=new Info();
+    public static Info info = new Info();
     public static List<IngameObject> ingameObjects = new ArrayList<>();
     public static List<OutgameObject> outgameObjects = new ArrayList<>();
     public static Spawner spawner = new Spawner();
@@ -54,14 +55,12 @@ public class Main extends Application {
         root.getChildren().add(canvas);
 
 
-
         stage.setTitle("main.sample.GameEntity.Tower Defense");
         stage.setResizable(false);
 
 
-        Menu menu=new Menu();
+        Menu menu = new Menu();
         menu.add();
-
 
 
         menu.imageView_button.setOnMousePressed((new EventHandler<MouseEvent>() {
@@ -72,12 +71,11 @@ public class Main extends Application {
                 root.getChildren().add(Store.normal);
                 root.getChildren().add(Store.machineGun);
                 root.getChildren().add(Store.sniper);
-   //             root.getChildren().add(Store.selling);
+                //             root.getChildren().add(Store.selling);
                 root.getChildren().add(NextWaveButton.imageView);
                 SoundTrack.backgroundMediaPlayer.stop();
                 SoundTrack.battleMediaPlayer.setVolume(2);
                 SoundTrack.battleMediaPlayer.play();
-
 
 
                 timer = new AnimationTimer() {
@@ -87,8 +85,8 @@ public class Main extends Application {
                             render();
 
                             update();
+                        } catch (ConcurrentModificationException e) {
                         }
-                        catch (ConcurrentModificationException e) {}
 
 
                     }
@@ -108,8 +106,6 @@ public class Main extends Application {
         ingameObjects.add(spawner);
 
 
-
-
         SoundTrack.backgroundMediaPlayer.play();
 
 
@@ -122,16 +118,15 @@ public class Main extends Application {
         outgameObjects.forEach(OutgameObject::update);
 
 
-
     }
 
     public static void render() {
 
         //  Map.autoDrawMap();
         //   System.out.println();
-    //    Map.draw();
+        //    Map.draw();
         Map.drawMapIn(gc);
-     //   Road.drawPoints(gc);
+        //   Road.drawPoints(gc);
         ingameObjects.forEach(g -> g.render(gc));
         Map.drawMapOut(gc);
         outgameObjects.forEach(g -> g.render(gc));

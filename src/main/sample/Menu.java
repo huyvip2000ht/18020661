@@ -11,17 +11,18 @@ import main.sample.GameObject.OutgameObject.Store;
 import java.util.ConcurrentModificationException;
 
 public class Menu {
-    public Image image_button = new Image("file:src/main/AssetsKit_2/PlayButton.png");
+    public Image image_button = new Image("file:src/mainx/AssetsKit_2/PlayButton.png");
     public Image image_button_ready = new Image("file:src/main/AssetsKit_2/PlayButton_ready.png");
     public ImageView imageView_button = new ImageView(image_button);
     public Image image_menu = new Image("file:src/main/AssetsKit_2/Menu.png");
     public ImageView imageView_menu = new ImageView(image_menu);
 
-    public void Menu(){
+    public void Menu() {
 
 
     }
-    public void add(){
+
+    public void add() {
         imageView_button.setX(Config.WIDTH * Config.SCALE / 2 - 192 / 2);
         imageView_button.setY(Config.HEIGHT * Config.SCALE / 2 - 128 / 2);
 

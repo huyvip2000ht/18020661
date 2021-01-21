@@ -5,24 +5,24 @@ import javafx.scene.paint.Color;
 import main.sample.Config;
 
 public class Tick extends OutgameObject {
-    private int[] time={0};
-    private long second=System.currentTimeMillis();
+    private int[] time = {0};
+    private long second = System.currentTimeMillis();
     private double fps;
     private int a;
 
-    public Tick(){
+    public Tick() {
 
-        this.i= 13 * Config.SCALE;
-        this.j= 1  * Config.SCALE;
+        this.i = 13 * Config.SCALE;
+        this.j = 1 * Config.SCALE;
     }
 
-    public void upTime(){
+    public void upTime() {
         time[0]++;
     }
 
 
     public String toString() {
-        return  String.valueOf(time[0])  ;
+        return String.valueOf(time[0]);
     }
 
     public int getTime() {
@@ -32,20 +32,20 @@ public class Tick extends OutgameObject {
     @Override
     public void render(GraphicsContext gc) {
         gc.setFill(Color.BLACK);
-     gc.fillText("FPS: "+String.valueOf(fps),i,j);
+        gc.fillText("FPS: " + String.valueOf(fps), i, j);
     }
 
     @Override
     public void update() {
         time[0]++;
-        if(System.currentTimeMillis()/1000!=second){
-            fps=getTime()-a;
-           // System.out.println("FPS: "+String.valueOf(getTime()-a));
+        if (System.currentTimeMillis() / 1000 != second) {
+            fps = getTime() - a;
+            // System.out.println("FPS: "+String.valueOf(getTime()-a));
 
-            a=getTime();
+            a = getTime();
         }
-     //  System.out.println(time[0]);
+        //  System.out.println(time[0]);
 
-        second=System.currentTimeMillis()/1000;
+        second = System.currentTimeMillis() / 1000;
     }
 }

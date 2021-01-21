@@ -3,7 +3,7 @@ package main.sample.GameObject.OutgameObject;
 import main.sample.GameObject.GameObject;
 
 public abstract class OutgameObject implements GameObject {
-    public int i,j;
+    public int i, j;
 
     public int getI() {
         return i;

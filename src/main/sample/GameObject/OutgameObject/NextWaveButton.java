@@ -18,23 +18,23 @@ public class NextWaveButton extends OutgameObject {
     private Image image;
     public static ImageView imageView;
     public Image image_ready;
-    private boolean check=false;
+    private boolean check = false;
 
-    public NextWaveButton(){
-        image=new Image("file:src/main/AssetsKit_2/NextWaveButton.png");
-        image_ready=new Image("file:src/main/AssetsKit_2/NextWaveButton_ready.png");
-        imageView=new ImageView(image);
-        imageView.setX(12* Config.SCALE+32);
-        imageView.setY(11*Config.SCALE);
+    public NextWaveButton() {
+        image = new Image("file:src/main/AssetsKit_2/NextWaveButton.png");
+        image_ready = new Image("file:src/main/AssetsKit_2/NextWaveButton_ready.png");
+        imageView = new ImageView(image);
+        imageView.setX(12 * Config.SCALE + 32);
+        imageView.setY(11 * Config.SCALE);
         imageView.setOnMousePressed((new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                check=!check;
-                if(Main.spawner.isHappening());
+                check = !check;
+                if (Main.spawner.isHappening()) ;
                 else {
                     Main.spawner.index++;
                     Main.spawner.updateTime();
-                    MediaPlayer enterMediaPlayer=new MediaPlayer(SoundTrack.waveMedia);
+                    MediaPlayer enterMediaPlayer = new MediaPlayer(SoundTrack.waveMedia);
                     enterMediaPlayer.play();
                 }
 
@@ -44,7 +44,7 @@ public class NextWaveButton extends OutgameObject {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 imageView.setImage(image_ready);
-                MediaPlayer enterMediaPlayer=new MediaPlayer(SoundTrack.enterMedia);
+                MediaPlayer enterMediaPlayer = new MediaPlayer(SoundTrack.enterMedia);
                 enterMediaPlayer.play();
 
 

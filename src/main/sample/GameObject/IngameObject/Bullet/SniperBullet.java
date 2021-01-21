@@ -5,17 +5,15 @@ import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 import main.sample.Config;
-import main.sample.GameObject.IngameObject.Tower.AbtractTower;
-import main.sample.SoundTrack;
+import main.sample.GameObject.IngameObject.Tower.AbstractTower;
 
-public class SniperBullet extends AbtractBullet {
+public class SniperBullet extends AbstractBullet {
 
 
-    public SniperBullet(int i, int j, double angle, AbtractTower owner) {
+    public SniperBullet(int i, int j, double angle, AbstractTower owner) {
         this.i = i;
         this.j = j;
 
@@ -23,7 +21,6 @@ public class SniperBullet extends AbtractBullet {
         centerJ = j + 32;
 
         this.owner = owner;
-
 
 
         damage = Config.SNIPER_GUN_DAMAGE;
